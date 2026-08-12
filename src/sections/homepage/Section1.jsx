@@ -19,7 +19,7 @@ function Section1() {
 
         {/* Botón */}
         <button className="hero-button">
-          VER SOLUCIONES DE SEGURIDAD &gt;
+          VER SOLUCIONES DE SEGURIDAD
         </button>
 
       </div>

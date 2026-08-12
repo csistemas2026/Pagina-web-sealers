@@ -36,9 +36,9 @@ function Footer() {
         <div className="footer-col">
           <h3 className="footer-title">MÁS VISITADOS</h3>
           <ul className="footer-links">
-            <li><a href="#inicio"><span className="arrow-red">&gt;</span> Inicio</a></li>
-            <li><a href="#conocenos"><span className="arrow-red">&gt;</span> Conócenos</a></li>
-            <li><a href="#productos"><span className="arrow-red">&gt;</span> Productos</a></li>
+            <li><a href="/"><span className="arrow-red">&gt;</span> Inicio</a></li>
+            <li><a href="/conocenos"><span className="arrow-red">&gt;</span> Conócenos</a></li>
+            <li><a href="/categorias"><span className="arrow-red">&gt;</span> Productos</a></li>
             <li><a href="#seguridad"><span className="arrow-red">&gt;</span> Seguridad Satelital</a></li>
           </ul>
         </div>
@@ -47,8 +47,8 @@ function Footer() {
         <div className="footer-col">
           <h3 className="footer-title">PUBLICACIONES</h3>
           <ul className="footer-links">
-            <li><a href="#noticias"><span className="arrow-red">&gt;</span> Noticias</a></li>
-            <li><a href="#eventos"><span className="arrow-red">&gt;</span> Eventos</a></li>
+            <li><a href="/blog"><span className="arrow-red">&gt;</span> Noticias</a></li>
+            <li><a href="/blog"><span className="arrow-red">&gt;</span> Eventos</a></li>
             <li><a href="#normativa"><span className="arrow-red">&gt;</span> Normativa</a></li>
             <li><a href="#sostenibilidad"><span className="arrow-red">&gt;</span> Sostenibilidad</a></li>
           </ul>

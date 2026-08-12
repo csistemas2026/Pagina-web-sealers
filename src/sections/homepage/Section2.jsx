@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -14,6 +15,9 @@ import cobertura from '../../assets/images/cobertura.png';
 import equipo from '../../assets/images/equipo.png';
 
 function Section2() {
+
+  const navigate=useNavigate();
+
   const items = [
     { id: 1, title: 'Planta de Fabricación', img: planta },
     { id: 2, title: 'Tecnología de Punta', img: tecnologia },
@@ -57,8 +61,8 @@ function Section2() {
           ))}
         </Swiper>
 
-        <button className="section2-btn">
-          CONOCE NUESTRA HISTORIA <span className="btn-arrow">&gt;</span>
+        <button className="section2-btn" onClick={()=> navigate('/conocenos')}>
+          CONOCE NUESTRA HISTORIA <span className="btn-arrow"></span>
         </button>
       </div>
     </section>
