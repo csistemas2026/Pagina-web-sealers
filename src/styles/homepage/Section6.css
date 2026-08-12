@@ -1,0 +1,98 @@
+/* Contenedor completo de 1920px con fondo blanco */
+.section6-container {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor interno alineado a la grilla madre de 1200px */
+.section6-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Lado de la Imagen (Izquierda) */
+.section6-image-side {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Ajuste de escala para las bolsas Big Bag con logo corporativo */
+.product-img-bigbag {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px; /* Aumentado ligeramente para dar más presencia */
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.06));
+}
+
+/* Lado del Texto (Derecha) */
+.section6-text-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 40px; /* Evita que el texto se pegue a las bolsas */
+}
+
+.tex-red{
+  color:#d32f2f;
+}
+
+/* Título imponente en dos colores si lo deseas (aquí manejamos tu azul Sealers) */
+.section6-title {
+  color: #004068;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  letter-spacing: -1.5px;
+}
+
+/* Párrafo descriptivo corto en gris */
+.section6-description {
+  color: #666666;
+  font-size: 18px;
+  margin: 0 0 40px 0;
+  max-width: 450px; /* Ampliado para evitar que se vea muy angosto */
+  line-height: 1.6;
+}
+
+/* Botón Rojo */
+.section6-btn {
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.section6-btn:hover {
+  background-color: #9a1212;
+}
+
+.btn-arrow {
+  font-size: 14px;
+  font-weight: bold;
+}

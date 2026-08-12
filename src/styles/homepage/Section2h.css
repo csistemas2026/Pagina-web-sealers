@@ -1,0 +1,132 @@
+.section2-contenedor {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section2-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section2-titulo {
+  font-size: 3.5rem;
+  color: #a7250e;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.linea-titulo {
+  display: block;
+  width: 400px;
+  height: 4px;
+  background-color: #b31a1a;
+  margin: 0 auto 40px auto;
+}
+
+.section2-experiencia {
+  font-size: 2.5rem;
+  margin-bottom: 55px;
+  color: #031b2f;
+  font-weight: bold;
+}
+
+.section2-descripcion {
+  font-size: 1.3rem;
+  color: #0a0000;
+  margin-bottom: 50px;
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.section2-carousel-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  padding: 20px 0;
+}
+
+.section2-carousel-wrapper .swiper-wrapper {
+  align-items: center;
+}
+
+.section2-carousel-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.section2-carousel-wrapper .swiper-button-prev,
+.section2-carousel-wrapper .swiper-button-next {
+  color: #b31a1a;
+  width: auto;
+  height: auto;
+}
+
+.section2-carousel-wrapper .swiper-button-prev::after,
+.section2-carousel-wrapper .swiper-button-next::after {
+  font-size: 28px;
+}
+
+.carousel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.icon-circle {
+  width: 120px;
+  height: 120px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-custom {
+  width: 75%;
+  height: auto;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #0a4d83;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.section2-btn {
+  background-color: #b31a1a;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.section2-btn:hover {
+  background-color: #8b1515;
+}
+
+@media (max-width: 768px) {
+  .section2-titulo {
+    font-size: 2.2rem;
+  }
+  .section2-carousel-wrapper {
+    margin-bottom: 30px;
+  }
+}

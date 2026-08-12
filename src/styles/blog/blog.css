@@ -1,0 +1,306 @@
+/* --- Contenedor general de la página de Blog --- */
+.blog-page-container {
+  width: 100%;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Estilo del banner superior si lo usas */
+.section1-banner {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #ffffff;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Cuadrícula de Artículos (Blog Grid) --- */
+.blog-content-wrapper {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* --- Tarjeta Individual --- */
+.blog-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la imagen superior */
+.blog-img-container {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.03);
+}
+
+/* Textos de la tarjeta */
+.blog-text-content {
+  padding: 20px 20px 10px 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.blog-category {
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.blog-title {
+  color: #0b2545;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Pie de tarjeta (Barra gris con fecha y ubicación) */
+.blog-card-footer {
+  background-color: #6c757d; /* Tonalidad gris similar a la referencia */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.blog-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.meta-icon {
+  font-size: 0.8rem;
+}
+
+/* --- Paginación --- */
+.blog-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cbd5e0;
+  color: #4a5568;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.page-btn.active, .page-btn:hover {
+  background-color: #0b2545;
+  color: #ffffff;
+}
+
+-------------------BLOG DETALLE-----------------------------------------------
+
+.blog-detalle-wrapper {
+  max-width: 900px; /* Ancho idéntico a la referencia de la segunda foto */
+  margin: -30px auto 60px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-detalle-card {
+  background-color: #ffffff;
+  padding: 45px 50px; /* Margen interno simétrico en los lados */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-detalle-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff; /* Fondo por si la imagen es vertical u horizontal */
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.blog-detalle-main-img {
+  width: 100%;
+  max-height: 800px;
+  object-fit: contain; /* Evita que la foto se deforme o se corte mal */
+  display: block;
+}
+
+.blog-detalle-title {
+  color: #0b2545;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.blog-detalle-meta {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  color: #718096;
+  font-size: 0.8rem;
+  margin-bottom: 25px;
+}
+
+.blog-detalle-lead {
+  color: #4a5568;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-left: 310px;
+  margin-right: 290px;
+  margin-top: 0px;
+  
+}
+
+.blog-detalle-section {
+  margin-top: 20px;
+  }
+
+.blog-detalle-subtitle {
+  color: #0b2545;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 315px;/*AQUI PARA AJUSTAR*/
+  text-transform: uppercase;
+}
+
+.blog-detalle-section p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+  margin-bottom: 50px;
+  margin-left: 315px;
+  margin-right: 290px;
+  margin-top: 0px;
+}
+
+/* Compartir en redes sociales */
+.blog-detalle-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.blog-social-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.blog-social-icons a {
+  width: 28px;
+  height: 28px;
+  background-color: #0b2545;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: opacity 0.2s;
+}
+
+.blog-social-icons a:hover {
+  opacity: 0.8;
+}
+
+/* Sección inferior "Encuentra más Publicaciones" */
+.related-blog-section {
+  max-width: 1200px;
+  margin: 60px auto 40px auto;
+  padding: 0 20px;
+}
+
+.blog-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+

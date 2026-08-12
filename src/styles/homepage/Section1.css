@@ -1,0 +1,81 @@
+/* Contenedor principal del Hero con tu imagen section1.png */
+.hero-section {
+  width: 100%;
+  min-height: 850px; /* Ajusta la altura para que se vea toda la escena del camión */
+  background-image: url('../../assets/images/section1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center;
+  position: relative;
+
+  padding-top: -20px; /* Espacio para que el Header absoluto no tape el texto */
+}
+
+/* Contenedor del texto alineado a la izquierda con la misma grilla del Header (1200px) */
+.hero-content {
+  
+  
+  max-width: 1200px;
+  width: 70%;
+  
+  /* CAMBIO AQUÍ: 
+     Si quieres moverlo a la derecha, aumenta el margen izquierdo 
+     o simplemente elimina el 'auto' y usa un valor fijo. 
+  */
+  margin: 0;            /* Quitamos el 'auto' para que no se centre */
+  
+  padding: 0 20px;
+  text-align: left;
+  /*margin-top: -120px; */
+}
+
+/* El título principal corregido */
+.hero-title {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 56px;      /* <--- Aumentado */
+  font-weight: 800;
+  line-height: 1.1;     /* Ajustado para el nuevo tamaño */
+  margin-bottom: 15px;  
+  letter-spacing: -1.5px; /* Ajustado para que las letras grandes no se vean separadas */
+}
+
+/* LA CLAVE: El fondo rojo ajustado perfectamente a la palabra */
+.highlight-red {
+  background-color: #b31d24; /* El rojo corporativo exacto */
+  padding: 2px 15px;         /* Colchón pequeño para que sea un rectángulo elegante */
+  display: inline-block;     /* Evita que la caja roja se expanda a lo ancho */
+  border-radius: 4px;        /* Un leve toque redondeado si lo requiere */
+}
+
+/* Subtítulo más fino y espaciado */
+.hero-subtitle {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 18px;      /* <--- Aumentado */
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;  /* Un poco más de aire */
+  max-width: 500px;     /* Ligeramente más ancho para compensar la letra grande */
+  line-height: 1.5;
+}
+
+/* Botón Rojo */
+.hero-button {
+  background-color: #b31d24;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;   /* Aumentamos el padding para un botón más robusto */
+  font-size: 16px;      /* <--- Aumentado */
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.hero-button:hover {
+  background-color: #b31d24;
+}

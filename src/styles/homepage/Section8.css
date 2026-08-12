@@ -1,0 +1,116 @@
+/* ==========================================================================
+   SECCIÓN 8: ASESORÍA PROFESIONAL (Asesora y Botón Flotante)
+   ========================================================================== */
+.advisor-section {
+    width: 100%;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 60px 0 0 0; /* Sin padding inferior para que la foto asiente en el corte */
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.advisor-master-container {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Título de Asesoría */
+.advisor-main-title {
+    font-size: 50px;
+    font-weight: 800;
+    color: #004070;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+/* Línea decorativa roja debajo del título */
+.advisor-title-line {
+    width: 200px;
+    height: 3px;
+    background-color: #b31d24; /* Rojo corporativo */
+    display: block;
+    margin-bottom: 20px;
+}
+
+.advisor-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    margin: 0 0 50px 0;
+    max-width: 600px; /* Un poco más de ancho para equilibrar */
+}
+
+/* --- CONTENEDOR DE IMAGEN Y ELEMENTOS FLOTANTES --- */
+.advisor-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Círculo celeste de fondo texturizado del mockup */
+
+
+/* Imagen de la Asesora */
+.advisor-img {
+    height: 420px; /* Aumentado de 360px */
+    width: auto;
+    object-fit: contain;
+    z-index: 2;
+}
+
+/* --- BOTÓN FLOTANTE ROJO --- */
+.advisor-float-btn {
+    position: absolute;
+    bottom: 120px;
+    right: 40px;
+    background-color: #b31d24;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; /* Ligeramente más redondeado */
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 25px rgba(179, 29, 36, 0.4);
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.advisor-float-btn:hover {
+    background-color: #911419;
+    transform: scale(1.03);
+}
+
+/* Icono del botón (bocadillo de chat con líneas) */
+.advisor-btn-icon {
+    font-size: 28px; /* Aumentado de 22px */
+}
+
+/* Textos internos del botón apilados */
+.advisor-btn-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.advisor-btn-text span {
+    font-size: 12px; /* Aumentado de 10px */
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.advisor-btn-text strong {
+    font-size: 15px; /* Aumentado de 12px */
+    font-weight: 800;
+}

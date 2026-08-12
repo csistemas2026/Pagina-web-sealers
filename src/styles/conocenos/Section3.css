@@ -1,0 +1,57 @@
+.section3-mission {
+  /* Fondo con transición suave */
+  background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), 
+              url('../../assets/images/conocenossection3.png');
+              transition: background-position 0.5s ease;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 150px 20px;
+  text-align: center;
+  color: white;
+  
+  /* Animación de entrada suave */
+  animation: fadeInSection 1.2s ease-out;
+}
+
+.section3-mission:hover {
+  background-position: center 45%; /* La imagen se desplaza ligeramente al hacer hover */
+}
+
+.mission-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section3-mission h2 {
+  font-size: 3.8rem; /* Un poco más grande para imponer */
+  font-weight: 800;  /* Más negrita */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.section3-mission p {
+  font-size: 1.6rem; 
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.line-red {
+  width: 80px; /* Un poco más larga */
+  height: 5px;
+  background: #d32f2f;
+  margin: 0 auto 30px;
+  border-radius: 2px; /* Bordes redondeados para un toque moderno */
+}
+
+/* Definición de la animación */
+@keyframes fadeInSection {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

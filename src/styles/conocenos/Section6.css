@@ -1,0 +1,57 @@
+/* src/styles/conocenos/Section6.css */
+
+.certificaciones-container {
+    text-align: center;
+    padding: 100px 40px; /* Aumentamos el padding para más aire */
+    background-color: #f9f9f9;
+}
+
+.certificaciones-title {
+    color: #003366;
+    font-size: 3.5rem;
+    margin-bottom: 40px; /* Aumentado para dar espacio a la línea */
+    font-weight: bold;
+    position: relative; /* ESTO ES LO QUE FALTABA */
+    padding-bottom: 20px; /* Espacio para que la línea no toque las letras */
+}
+
+.certificaciones-title::after {
+  content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 200px; 
+    height: 4px;
+    background-color: #ff3b30;
+    border-radius: 2px;
+}
+
+
+.certificaciones-subtitle {
+    color: #444;
+    font-size: 1.5rem; /* Subtítulo más legible */
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certificaciones-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Más espacio entre fotos */
+    flex-wrap: wrap;
+}
+
+.certificaciones-grid img {
+    max-width: 220px; /* Fotos mucho más grandes */
+    height: auto;
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+/* Opcional: efecto al pasar el mouse */
+.certificaciones-grid img:hover {
+    transform: scale(1.1);
+}

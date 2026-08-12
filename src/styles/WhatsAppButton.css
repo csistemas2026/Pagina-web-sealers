@@ -1,0 +1,48 @@
+/* ==========================================================================
+   BOTÓN FLOTANTE DE WHATSAPP (Solo estilos CSS)
+   ========================================================================== */
+.wsp-float-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px; 
+    right: 40px;  
+    background-color: #25d366; 
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.wsp-float-btn:hover {
+    background-color: #20ba5a;
+    transform: scale(1.1); 
+}
+
+@keyframes wspPulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.wsp-float-btn {
+    animation: wspPulse 2s infinite;
+}
+
+/* Suponiendo que ya tienes los estilos de .wsp-float-btn */
+
+.wsp-logo-svg {
+  width: 35px;    /* Ajusta el tamaño del logo aquí */
+  height: 35px;
+  color: white;   /* Color del logo */
+  
+  /* Centrado perfecto si .wsp-float-btn es flex */
+  display: block; 
+}

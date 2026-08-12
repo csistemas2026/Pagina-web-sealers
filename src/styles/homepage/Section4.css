@@ -1,0 +1,103 @@
+/* Contenedor completo de 1920px con fondo blanco */
+.section4-container {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor interno alineado a la grilla madre (1200px) */
+.section4-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Lado de la Imagen (Izquierda) */
+.section4-image-side {
+  flex: 1.2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Ajuste de tamaño para los precintos de plástico verde y amarillo */
+.product-img-plastico {
+  max-width: 90%;
+  height: auto;
+  max-height: 500px; /* Aumentado ligeramente para mantener el equilibrio */
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.06));
+}
+
+/* Lado del Texto (Derecha) */
+.section4-text-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 40px; /* Separación extra para que no choque con la imagen */
+}
+
+/* Pequeño tag rojo arriba del título */
+.section4-tag {
+  color: #b71c1c;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Título imponente en azul marino oscuro */
+.section4-title {
+  color: #004068;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  letter-spacing: -1.5px;
+}
+
+/* Párrafo descriptivo corto */
+.section4-description {
+  color: #666666;
+  font-size: 18px;
+  margin: 0 0 40px 0;
+  max-width: 450px; /* Ampliado para adaptarse a la letra más grande */
+  line-height: 1.6;
+}
+
+/* Botón Rojo */
+.section4-btn {
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.section4-btn:hover {
+  background-color: #9a1212;
+}
+
+.btn-arrow {
+  font-size: 14px;
+  font-weight: bold;
+}

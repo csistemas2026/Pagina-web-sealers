@@ -1,0 +1,177 @@
+/* --- Sección de Cursos y Cuadrícula --- */
+.courses-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Asegura fondo claro en todo el componente */
+}
+
+
+.courses-grid-section {
+  width: 100%;             /* Ocupa todo el ancho disponible */
+  max-width: 1200px;       /* Limita el ancho máximo del contenido interno */
+  margin: 0 auto;          /* Centra la cuadrícula */
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas como en la imagen */
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* --- Tarjeta de Curso --- */
+.course-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.course-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Efecto Hover (Ojito de "Ver curso") --- */
+.course-overlay-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 37, 69, 0.85); /* Tono azul corporativo translúcido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 3;
+}
+
+.course-card:hover .course-overlay-hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.eye-icon {
+  font-size: 2.2rem;
+  color: #e63946; /* Color rojo exacto para el ícono del ojo */
+  margin-bottom: 5px;
+}
+
+.red-line {
+  width: 50px;
+  height: 3px;
+  background-color: #e63946; /* Línea divisoria roja */
+  margin: 8px 0;
+  border-radius: 2px;
+}
+
+.ver-curso-text {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+/* --- Contenido de la Tarjeta --- */
+.course-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-category {
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.course-title {
+  font-size: 1.1rem;
+  color: #0b2545;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+/* --- Pie de la Tarjeta (Badges de Horas y Certificado) --- */
+.course-footer {
+  display: flex;
+  background-color: #71767c; /* Color plomo/gris de la barra inferior de la card */
+  padding: 10px 15px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.course-info-badge {
+  color: #ffffff;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+/* --- Paginación Inferior --- */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #adb5bd;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.page-btn.active,
+.page-btn:hover {
+  background-color: #0b2545; /* Azul oscuro corporativo para el botón activo */
+}
+
+/* --- Responsividad para pantallas pequeñas --- */
+@media (max-width: 900px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}

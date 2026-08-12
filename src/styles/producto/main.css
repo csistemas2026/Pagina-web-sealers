@@ -1,0 +1,183 @@
+
+.main-page-container {
+  background-color: #f4f6f9;
+  min-height: 120vh;
+  font-family: Arial, sans-serif;
+}
+
+.main-productos-section {
+  padding: 60px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.main-header {
+  margin-bottom: 25px;
+}
+
+.main-header h2 {
+  color: #0b2545;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.red-divider {
+  width: 100px;
+  height: 3px;
+  background-color: #dc2626;
+}
+
+.main-productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+
+}
+
+.main-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.main-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.main-card-img-box {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: #ffffff;
+}
+
+.main-card-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Efecto Overlay Hover (Idéntico al menú) --- */
+.main-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 58, 138, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.main-card:hover .main-card-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.eye-icon {
+  color: #ef4444;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.main-card-cat {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  opacity: 0.95;
+}
+
+.main-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Paginación */
+.main-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.page-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.page-dot.active {
+  background-color: #0b2545;
+  color: #ffffff;
+}
+
+
+/*---------------SECCION MAS SOLUCIONES---------*/
+
+.more-solutions-section {
+  max-width: 1200px;
+  margin: 0px auto 0px auto;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  gap: 20px;
+}
+
+.solutions-header {
+  margin-bottom: 25px;
+}
+
+.solutions-header h2 {
+  color: #0b2545;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.red-divider {
+  width: 120px;
+  height: 3px;
+  background-color: #dc2626;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+@media (max-width: 900px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

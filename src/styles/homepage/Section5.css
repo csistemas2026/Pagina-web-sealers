@@ -1,0 +1,107 @@
+/* Contenedor completo de 1920px con fondo gris claro */
+.section5-container {
+  width: 100%;
+  background-color: #ffffff; /* Mismo gris claro corporativo */
+  background-image: url('../../assets/images/fondo5.png');
+  padding: 80px 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor interno alineado a la grilla madre de 1200px */
+.section5-content {
+  max-width: 1050px; 
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  
+  /* Cambiamos a justify-content: center para que busquen el centro */
+  justify-content: center; 
+  
+  /* Controlamos la distancia exacta con un gap de 50px */
+  gap: 50px; 
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Lado del Texto (Izquierda) */
+.section5-text-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* El pequeño tag rojo de Seguridad Satelital */
+.section5-tag {
+  color: #b71c1c;
+  font-size: 16px;       
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Título principal en azul marino oscuro */
+.section5-title {
+  color: #004068;
+  font-size: 56px;       
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  letter-spacing: -1.5px;
+}
+
+/* Párrafo descriptivo corto */
+.section5-description {
+  color: #666666;
+  font-size: 18px;       
+  margin: 0 0 40px 0;
+  max-width: 420px;      /* Ampliado para acomodar el nuevo tamaño de letra */
+  line-height: 1.6;
+}
+
+/* Botón Rojo */
+.section5-btn {
+  background-color: #b71c1c;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;       
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.section5-btn:hover {
+  background-color: #9a1212;
+}
+
+.btn-arrow {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Lado de la Imagen (Derecha) */
+.section5-image-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajuste de tamaño para los candados electrónicos y equipos de rastreo */
+.product-img-candados {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;     /* Aumentado de 450px para dar más presencia */
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}

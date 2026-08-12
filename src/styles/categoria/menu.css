@@ -1,0 +1,170 @@
+/*-----------BANNER---------*/
+.section-banner {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajusta la altura a tu preferencia */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/fondopro.jpg');
+}
+
+/* Capa oscura para que el texto blanco resalte sobre la imagen */
+.banner-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* Tu color azul */  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  
+  /* Esto baja el título desde arriba sin tocar la altura del cuadro */
+  padding-top: 90px; 
+  
+  text-align: center;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .contacto-title {
+    font-size: 3rem;
+  }
+}
+
+.menu-page-container{
+    background-color: #ffffff;
+    height: 1200px;
+}
+
+.menu-productos-section {
+  max-width: 1100px;
+  max-height: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.menu-productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.menu-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.menu-card-img-box {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: #ffffff;
+}
+
+.menu-card-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 58, 138, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  
+  /* Oculto por defecto para el efecto hover */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+
+}
+
+/* Al pasar el cursor sobre la tarjeta, aparece el overlay suavemente */
+.menu-card:hover .menu-card-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.eye-icon {
+  color: #ef4444;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.menu-card-cat {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  opacity: 0.95;
+}
+
+.menu-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.menu-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.page-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.page-dot.active {
+  background-color: #0b2545;
+  color: #ffffff;
+}

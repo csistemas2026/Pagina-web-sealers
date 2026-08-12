@@ -1,0 +1,107 @@
+/* Contenedor principal con fondo oscuro profesional */
+.site-footer {
+  background-color: rgba(8, 93, 179, 0.6); /* Tu color azul */
+  color: #ffffff;
+  padding: 40px 20px 20px; /* Reducimos altura drásticamente */
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  /* Creamos 5 columnas pero ajustamos sus tamaños */
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Títulos de sección */
+.footer-title {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #fff;
+  border-bottom: 2px solid #b31a1a; /* Línea roja pequeña */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Listas de links */
+.footer-links {
+  list-style: none; /* Elimina bullets por defecto */
+  padding: 0 !important; /* IMPORTANTE: Elimina el padding que desplaza los elementos */
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Asegura que se apilen verticalmente */
+  align-items: flex-start; 
+}
+
+.footer-links li {
+  display: flex;
+  align-items: center; /* Centra el icono '>' con el texto */
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.arrow-red { color: #b31a1a; 
+  margin-right: 5px; 
+}
+
+/* Columna de contacto */
+.footer-description { font-size: 15px; margin: 10px 0; color: #f1efef; }
+.footer-divider-red { border: none; height: 2px; background: #b31a1a; width: 320px; margin: 10px 0; }
+.info-item { margin-bottom: 5px; font-size: 15px; }
+
+/* Redes sociales */
+.social-icons { display: flex; gap: 8px; margin-top: 10px; }
+.social-btn {
+  width: 30px; height: 30px;
+  background: #112d42; color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; font-size: 14px;
+}
+
+/* Libro de reclamaciones (más compacto) */
+.col-reclamaciones { text-align: center; }
+.book-icon-svg { width: 40px; color: #fff; margin-bottom: 5px; }
+.btn-libro {
+  display: block; width: 100%;
+  padding: 8px; background: #fff; color: #031b2f;
+  border: none; border-radius: 4px; cursor: pointer; font-weight: bold;
+}
+
+/* Copyright al final */
+.footer-copyright {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 11px;
+  color: #777;
+}
+
+footer-logo-img {
+  max-width: 180px; /* Ajusta este número si quieres que sea más pequeño o más grande */
+  width: 100%;      /* Hace que se adapte pero sin superar el max-width */
+  height: auto;     /* Mantiene la proporción original */
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Asegurar que la columna del logo no crezca de más */
+.col-brand {
+  max-width: 300px; /* Evita que esta columna se expanda demasiado */
+  flex: 1;
+}

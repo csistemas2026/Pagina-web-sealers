@@ -1,0 +1,115 @@
+.section2-container {
+  padding: 150px 20px 100px 20px; 
+  text-align: center;
+}
+
+.section2-title {
+  margin-bottom: 100px;
+  color: #003366;
+  font-size: 3rem;     /* Aumenta este valor (prueba 2.8rem, 3rem, o 3.2rem) */
+  font-weight: 700;
+}
+
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;  
+  position: relative;
+  margin-top: 70px; /* Aumenta este número (ej. 90px) si quieres separarlo aún más de la raya roja */
+  
+  margin-bottom: 50px; 
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.section2-title::after {
+  content: '';
+  display: block;
+  margin: 35px auto -5px;  /* 15px de espacio arriba, centrado automático */
+  width: 350px;         /* AUMENTA ESTE VALOR para hacerla más ancha (ej. 150px o 200px) */
+  height: 4px;          /* Opcional: Aumenta la altura para que sea más gruesa */
+  background-color: #ff3b30; /* El color rojo */
+  border-radius: 5px;   /* Opcional: Bordes redondeados para un look pro */
+}
+
+/* Línea de fondo (gris tenue) */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #acaaaa;
+  z-index: 0;
+}
+
+.timeline-item {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto resorte suave */
+}
+
+/* Efecto al pasar el cursor: el bloque entero se desliza hacia arriba */
+.timeline-item:hover {
+  transform: translateY(-15px);
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background: #003366;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 3px #003366;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .circle {
+  background: #ff3b30; /* Cambia a rojo al interactuar */
+  box-shadow: 0 0 0 6px rgba(255, 59, 48, 0.3);
+}
+
+.year {
+  font-size: 1.1rem;
+  color: #003366;
+  font-weight: 800;
+}
+
+.text {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* --- ADAPTACIÓN A CELULARES --- */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column; /* Cambia a vertical */
+    align-items: flex-start;
+    margin-left: 40px;
+  }
+  
+  .timeline::before {
+    left: 10px; /* La línea se mueve a la izquierda */
+    top: 0;
+    width: 4px;
+    height: 100%;
+  }
+
+  .timeline-item {
+    margin-bottom: 40px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+
+  .circle {
+    margin: 0 20px 0 0; /* Acomoda el círculo a la izquierda */
+  }
+}

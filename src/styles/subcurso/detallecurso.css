@@ -1,0 +1,263 @@
+/* --- Contenedor general del detalle --- */
+
+.course-page.container{
+  
+}
+
+.detalle-main-content {
+  max-width: 1200px;
+  margin: 40px auto 50px auto; /* <-- Cambiado a positivo para que baje correctamente */
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.detalle-container-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Imagen principal grande --- */
+.detalle-image-wrapper {
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 35px;
+}
+
+.detalle-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Estructura en 2 columnas --- */
+.detalle-body-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .detalle-body-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Columna Izquierda --- */
+.detalle-course-title {
+  color: #0b2545;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.detalle-description {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+/* Badges de duración, modalidad, etc. */
+.detalle-badges-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.detalle-badge {
+  background-color: #5c768d;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-align: center;
+  flex: 1;
+  min-width: 90px;
+}
+
+.detalle-badge strong {
+  font-size: 0.85rem;
+}
+
+/* Botones de acción inferior izquierdo */
+.detalle-action-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-solicitar, .btn-descargar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-solicitar {
+  background-color: #27ae60;
+}
+
+.btn-descargar {
+  background-color: #c0392b;
+}
+
+/* --- Columna Derecha: Cajas Azules --- */
+.info-box-blue {
+  background-color: #133c55;
+  color: #ffffff;
+  padding: 15px 18px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-box-blue.horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.box-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.info-box-blue p {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin: 0;
+  color: #e2e8f0;
+}
+
+/* --- Tarjeta del Instructor --- */
+.instructor-card {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.instructor-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #133c55;
+}
+
+.instructor-tag {
+  font-size: 0.8rem;
+  color: #718096;
+}
+
+.instructor-name {
+  color: #0b2545;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.instructor-line {
+  width: 100px;
+  height: 2px;
+  background-color: #3182ce;
+  margin-bottom: 6px;
+  padding-left: 300px;
+  
+}
+
+.instructor-bio {
+  font-size: 0.78rem;
+  color: #4a5568;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* --- Compartir en redes --- */
+.share-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+}
+
+.social-icons a {
+  width: 28px;
+  height: 28px;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.social-icons a:hover {
+  background-color: #133c55;
+  color: #ffffff;
+}
+
+/* --- Sección "Encuentra más Cursos para ti" --- */
+.related-courses-section {
+  max-width: 1200px;
+  margin: 0px auto -50px auto; /* <-- Aumentado el margen inferior para separar del footer */
+  padding: 0 50px;
+}
+
+.related-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.related-header h2 {
+  color: #0b2545;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.red-divider {
+  width: 120px;
+  height: 4px;
+  background-color: #c0392b;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Corrección del grid inferior para evitar cortes en las tarjetas */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding-bottom: 100px; /* Espacio extra para que no roce el footer */
+}

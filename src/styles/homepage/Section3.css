@@ -1,0 +1,111 @@
+/* Contenedor completo de 1920px con fondo gris claro texturizado */
+.section3-container {
+  width: 100%;
+  background-color: #ffffff; /* Color de fondo gris claro de la captura */
+  background-image: url('../../assets/images/fondo3.png');
+  padding: 70px 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor interno alineado a la grilla madre (1200px) */
+.section3-content {
+  max-width: 1050px; 
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  
+  /* CAMBIO CLAVE: Centramos ambos elementos en el medio */
+  justify-content: center; 
+  
+  /* Controlamos la distancia del centro exacta mediante el gap */
+  gap: 50px; 
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Lado del Texto (Izquierda) */
+.section3-text-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  
+}
+
+/* El pequeño tag rojo arriba del título */
+.section3-tag {
+  color: #b31d24;
+  font-size: 16px;       /* Aumentado de 13px */
+  font-weight: 700;
+  letter-spacing: 1px;   /* Mayor espaciado para un look más premium */
+  margin-bottom: 10px;
+}
+
+/* Título imponente en azul marino oscuro */
+.section3-title {
+  color: #004068;
+  font-size: 56px;       /* Aumentado */
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 20px 0;    /* Un poco más de espacio abajo */
+  letter-spacing: -1.5px;
+}
+
+/* Párrafo descriptivo corto en gris */
+.section3-description {
+  color: #666666;
+  font-size: 18px;       /* Aumentado de 15px */
+  margin: 0 0 40px 0;    /* Más espacio antes del botón */
+  max-width: 400px;      /* Un poco más ancho */
+  line-height: 1.6;
+}
+
+/* Botón Rojo "DESCUBRE TU SOLUCIÓN..." */
+.section3-btn {
+  background-color: #b31d24;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;    /* Más grande y cómodo */
+  font-size: 16px;       /* Aumentado de 11px */
+  font-weight: 700;
+  border-radius: 6px;    /* Bordes un poco más suaves */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.section3-btn:hover {
+  background-color: #9a1212;
+}
+
+.btn-arrow {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Lado de la Imagen (Derecha) */
+.section3-image-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Forzamos a que la imagen cargue hacia la derecha dentro de su mitad, 
+     así la distancia del centro queda milimétrica y exacta */
+  justify-content: flex-end;
+}
+
+/* Ajuste de tamaño del precinto con cable */
+.product-img-alta {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;     /* Aumentado de 450px */
+  object-fit: contain;
+}

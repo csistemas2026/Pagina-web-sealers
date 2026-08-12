@@ -1,0 +1,63 @@
+.section4-define {
+    padding: 80px 20px;
+    text-align: center; /* Centra títulos y subtítulos */
+    background-color: #ffffff;
+}
+
+.section4-main-title {
+    color: #004068;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section4-subtitle {
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.line-red {
+    width: 200px;      /* Mismo ancho que en la otra sección */
+    height: 4px;      /* Mismo grosor */
+    background-color: #ff3b30; /* El rojo corporativo */
+    margin: 0 auto 20px auto;  /* Centra el div y le da espacio abajo */
+    border-radius: 2px;
+}
+
+/* Centrado del Grid */
+.values-grid {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.value-card {
+    width: 250px;
+    text-align: center;
+}
+
+/* Efecto visual sobre la imagen */
+.value-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px; /* Bordes suaves */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.9); /* Oscurece un poco la imagen base */
+}
+
+/* Efecto al pasar el cursor */
+.value-card:hover .value-img {
+    transform: scale(1.05); /* Zoom suave */
+    filter: brightness(1.1); /* Se ilumina al pasar el mouse */
+}
+
+/* Mejora la letra */
+.value-title {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #003366; /* Azul corporativo */
+    font-weight: 700;
+}
