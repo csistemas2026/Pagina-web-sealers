@@ -18,6 +18,8 @@ import Cursos from './sections/cursos/course';
 import DetalleCurso from './sections/subcurso/detallecurso';
 import Blog from './sections/blog/index';
 import BlogDetalle from './sections/blog/blogdetalle';
+import Proximamente from './pages/Proximamente.jsx';
+
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
             <Route path="/cursos/:id" element={<DetalleCurso />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetalle />} />
+            <Route path="/seguridad" element={<Proximamente />} />
 
 
           </Routes>

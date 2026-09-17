@@ -1,19 +1,58 @@
+/* ==========================================================================
+   FOOTER PRINCIPAL
+   ========================================================================== */
 /* Contenedor principal con fondo oscuro profesional */
 .site-footer {
   background-color: rgba(8, 93, 179, 0.6); /* Tu color azul */
   color: #ffffff;
-  padding: 40px 20px 20px; /* Reducimos altura drásticamente */
+  padding: 40px 20px 20px;
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
-  /* Creamos 5 columnas pero ajustamos sus tamaños */
+  /* Creamos 5 columnas con sus tamaños proporcionales */
   grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
-  gap: 20px;
+  gap: 70px;
   align-items: start;
+}
+
+/* Columna de la marca / logo */
+.col-brand {
+  max-width: 300px;
+  flex: 1;
+}
+
+.footer-logo-img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  font-size: 15px;
+  margin: 10px 0;
+  color: #f1efef;
+}
+
+.footer-divider-red {
+  border: none;
+  height: 2px;
+  background: #b31a1a;
+  width: 100%;
+  max-width: 320px;
+  margin: 10px 0;
+}
+
+.info-item {
+  margin-bottom: 8px;
+  font-size: 15px;
 }
 
 /* Títulos de sección */
@@ -26,19 +65,19 @@
   padding-bottom: 5px;
 }
 
-/* Listas de links */
+/* Listas de enlaces */
 .footer-links {
-  list-style: none; /* Elimina bullets por defecto */
-  padding: 0 !important; /* IMPORTANTE: Elimina el padding que desplaza los elementos */
+  list-style: none;
+  padding: 0 !important;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Asegura que se apilen verticalmente */
-  align-items: flex-start; 
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-links li {
   display: flex;
-  align-items: center; /* Centra el icono '>' con el texto */
+  align-items: center;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -47,39 +86,88 @@
   color: #ffffff;
   text-decoration: none;
   font-size: 13px;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #fff;
 }
 
-.arrow-red { color: #b31a1a; 
-  margin-right: 5px; 
+.arrow-red {
+  color: #b31a1a;
+  margin-right: 5px;
 }
 
-/* Columna de contacto */
-.footer-description { font-size: 15px; margin: 10px 0; color: #f1efef; }
-.footer-divider-red { border: none; height: 2px; background: #b31a1a; width: 320px; margin: 10px 0; }
-.info-item { margin-bottom: 5px; font-size: 15px; }
+.siguenos-text {
+  font-size: 13px;
+  color: #f1efef;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
 
 /* Redes sociales */
-.social-icons { display: flex; gap: 8px; margin-top: 10px; }
-.social-btn {
-  width: 30px; height: 30px;
-  background: #112d42; color: #fff;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none; font-size: 14px;
+.social-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
 }
 
-/* Libro de reclamaciones (más compacto) */
-.col-reclamaciones { text-align: center; }
-.book-icon-svg { width: 40px; color: #fff; margin-bottom: 5px; }
+.social-btn {
+  width: 32px;
+  height: 32px;
+  background: #112d42;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  background-color: #b31a1a;
+}
+
+/* Libro de reclamaciones */
+.col-reclamaciones {
+  text-align: center;
+}
+
+.reclamaciones-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-icon-svg {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
 .btn-libro {
-  display: block; width: 100%;
-  padding: 8px; background: #fff; color: #031b2f;
-  border: none; border-radius: 4px; cursor: pointer; font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background: #fff;
+  color: #031b2f;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-libro:hover {
+  background-color: #f1f5f9;
 }
 
 /* Copyright al final */
@@ -87,21 +175,59 @@
   text-align: center;
   margin-top: 30px;
   padding-top: 15px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 11px;
-  color: #777;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  color: #e2e8f0;
 }
 
-footer-logo-img {
-  max-width: 180px; /* Ajusta este número si quieres que sea más pequeño o más grande */
-  width: 100%;      /* Hace que se adapte pero sin superar el max-width */
-  height: auto;     /* Mantiene la proporción original */
-  display: block;
-  margin-bottom: 20px;
-}
+/* ==========================================
+   AJUSTE RESPONSIVO (IPHONE 14 PRO Y MÓVILES)
+   ========================================== */
 
-/* Asegurar que la columna del logo no crezca de más */
-.col-brand {
-  max-width: 300px; /* Evita que esta columna se expanda demasiado */
-  flex: 1;
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 40px 20px 20px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Apilamos todas las columnas verticalmente */
+    gap: 35px;
+    text-align: center;
+  }
+
+  .col-brand {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo-img {
+    margin: 0 auto 15px auto;
+  }
+
+  .footer-divider-red {
+    margin: 15px auto;
+  }
+
+  .footer-title {
+    margin-bottom: 15px;
+  }
+
+  .footer-links {
+    align-items: center; /* Centra los enlaces en móvil */
+  }
+
+  .footer-links li {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .btn-libro {
+    max-width: 250px;
+  }
 }

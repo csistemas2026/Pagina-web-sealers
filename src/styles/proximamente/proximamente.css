@@ -1,0 +1,95 @@
+/* ==========================================================================
+   PÁGINA: PRÓXIMAMENTE (Coming Soon)
+   ========================================================================== */
+.coming-soon-container {
+    width: 100%;
+    min-height: 100vh;
+    /* Colocas url('ruta-de-tu-imagen') */
+    background-size: cover;          /* Hace que la imagen cubra todo el espacio sin deformarse */
+    background-position: center;     /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat;    /* Evita que la imagen se multiplique en mosaico */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    }
+
+.coming-soon-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Icono central */
+.coming-soon-icon {
+    font-size: 50px;
+    color: #004070; /* Azul corporativo */
+    background-color: #e6f0fa;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* Etiqueta superior */
+.coming-soon-badge {
+    font-size: 13px;
+    font-weight: 700;
+    color: #b31d24; /* Rojo corporativo */
+    background-color: #fde8e8;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+/* Título */
+.coming-soon-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #004070;
+    margin: 0 0 15px 0;
+}
+
+/* Descripción */
+.coming-soon-description {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 35px 0;
+}
+
+/* Botón de Retorno estilizado */
+.coming-soon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b31d24;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(179, 29, 36, 0.2);
+}
+
+.coming-soon-btn:hover {
+    background-color: #911419;
+    transform: translateY(-2px);
+}

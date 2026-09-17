@@ -1,6 +1,6 @@
 /* Header absoluto para que flote sobre la section1.png */
 .site-header {
- position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -9,24 +9,24 @@
   font-family: sans-serif;
 }
 
-/* Contenedor principal alineado a 1920px */
+/* Contenedor principal alineado a 1200px */
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 120px; /* Definimos altura para organizar bien */
+  height: 120px;
 }
 
 /* Caja blanca del Logo flotando a la izquierda */
 .logo-box {
   position: absolute;
-  left: -110px; /* Desplazamos un poco más a la izquierda para compensar el tamaño */
+  left: -110px;
   top: 0;
   background-color: #ffffff;
   width: 192px;  
   height: 192px; 
-  padding: 25px; /* Ajuste de padding proporcional */
+  padding: 25px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -43,15 +43,15 @@
 /* Contenedor derecho para alinear la info y el menú verticalmente */
 .header-right-content {
   width: 100%;
-  padding-left: 100px; /* Aumentamos el padding para evitar superposición */
+  padding-left: 100px;
   display: flex;
   flex-direction: column;
 }
 
 /* Barra delgada superior de información */
 .top-info-bar {
- display: flex;
-  justify-content: center; /* Centrado */
+  display: flex;
+  justify-content: center;
   gap: 20px;
   padding: 10px 0;
   font-size: 14px;
@@ -60,22 +60,21 @@
 
 .info-right span {
   display: flex;
-  align-items: center; /* ALINEACIÓN VERTICAL CRÍTICA */
-  gap:50px;
+  align-items: center;
+  gap: 50px;
 }
 
 .info-left { 
   display: flex;
-  gap: 20px;          /* Espacio limpio entre Certificaciones y Exportación */
-  margin-left: -50px; /* LA CLAVE: Subimos este valor para arrastrarlo más a la derecha */
+  gap: 20px;
+  margin-left: -50px;
   align-items: center;
 }
 
-/* Modificado para espaciar limpiamente teléfono, correo y bandera */
 .info-right {
   display: flex;
   align-items: center;
-  gap: 20px; /* 👈 Espaciado idéntico a tu captura */
+  gap: 20px;
 }
 
 .flag {
@@ -90,7 +89,7 @@
 /* Menú de enlaces de navegación abajo de la info */
 .navigation-menu {
   display: flex;
-  justify-content: center; /* Centrado absoluto del menú */
+  justify-content: center;
   align-items: center;
   height: 20px;
   gap: 30px;
@@ -99,7 +98,7 @@
 .navigation-menu a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: 600; /* Un poco más de peso para que resalten más */
+  font-weight: 600;
   font-size: 15px; 
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -107,42 +106,38 @@
 }
 
 .navigation-menu a:hover {
-  color: #d32f2f; /* El tono rojo de acento de la marca */
+  color: #d32f2f;
 }
 
 /* ==========================================================================
-   AGREGADO NUEVO: ESTILOS PARA LOS ICONOS ROJOS (CON ALINEACIÓN TAL CUAL)
+   ESTILOS PARA LOS ICONOS ROJOS Y ELEMENTOS DE INFO
    ========================================================================== */
 
-/* Envoltura interna para alinear icono + texto sin romper tus gaps */
 .info-item {
   display: flex;
   align-items: center;
-  gap: 20px; /* Separación exacta entre el icono rojo y la letra */
+  gap: 20px;
   white-space: nowrap;
 }
 
-/* Color rojo para los iconos vectoriales de FontAwesome */
 .header-red-icon {
   color: #b31a1a; 
-  font-size: 20px; /* Aumentado de 13px */
+  font-size: 20px;
   display: inline-block;
 }
 
-/* Evita que los nuevos enlaces <a> hereden colores azules por defecto */
 .top-link {
   color: #ffffff;
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Contenedor del idioma */
 .info-lang {
- display: inline-flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: 20px !important; /* Altura del contenedor de texto */
-  margin-left: 20px !important; /* Ajusta este valor si necesitas separar la bandera del correo */
+  height: 20px !important;
+  margin-left: 20px !important;
 }
 
 .info-lang .flag {
@@ -155,98 +150,142 @@
   vertical-align: middle !important;
   width: 35px !important;
   height: auto !important;
-  /* Esta línea es la que mueve la bandera hacia arriba o abajo */
-  /* Si está muy arriba, aumenta el número (ej: -3px). Si está muy abajo, redúcelo (ej: -6px) */
   margin-top: -20px !important;
   margin-right: -95px !important;
   margin-left: -65px;
 }
 
-.menu-toggle{
+.menu-toggle {
   display: none;
 }
 
-/* ... [MANTÉN TODO TU CÓDIGO ACTUAL ARRIBA] ... */
-
 /* ==========================================================================
-   AJUSTES RESPONSIVOS (MANTENIENDO TAMAÑOS ORIGINALES)
+   AJUSTES RESPONSIVOS (MENÚ A LA IZQUIERDA Y SOLO ENLACES)
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .header-container { padding: 0 40px; }
-  
-  /* Ajuste para que el logo no se salga tanto en tablets */
-  .logo-box { left: -50px; }
-  .header-right-content { padding-left: 100px; }
+  .header-container { 
+    padding: 0 20px; 
+  }
+  .logo-box { 
+    left: 10px; 
+  }
+  .header-right-content { 
+    padding-left: 180px; 
+  }
 }
 
 @media (max-width: 992px) {
+  /* Ocultar caja blanca en móviles */
+  .logo-box {
+    display: none !important;
+  }
+
+  .header-container {
+    height: 50px;
+  }
+
+  /* BOTÓN HAMBURGUESA: Posicionado a la IZQUIERDA */
   .menu-toggle {
-  display: block !important;
+    display: block !important;
     position: absolute;
-    top: 40px;
-    right: 20px;
+    top: 10px;
+    left: 20px; /* <--- Movido a la izquierda */
+    right: auto;
     z-index: 9999;
     background: transparent;
     border: none;
-    font-size: 35px;
+    font-size: 30px;
     color: #ffffff;
     cursor: pointer;
   }
 
+  /* Ocultar barra superior de contactos para un menú más corto */
+  .top-info-bar {
+    display: none !important;
+  }
+
+  /* Menú desplegable compacto */
   .header-right-content {
     display: none; 
     position: absolute;
-    top: 100%;
+    top: 50px;
     left: 0;
     width: 100%;
-    background: rgba(3, 27, 47, 0.98);
+    background: rgba(3, 27, 47, 0.96);
     flex-direction: column;
-    padding: 20px;
+    padding: 25px 0;
     z-index: 9998;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   }
 
-  /* Cuando el botón hamburguesa se presiona */
   .header-right-content.active {
     display: flex !important;
   }
 
-  .top-info-bar {
-    display: flex;
-  justify-content: center;
-  align-items: center; /* Centra verticalmente todo el contenido */
-  padding: 15px 0;    /* Aumentamos el padding para "bajar" visualmente los textos */
-  font-size: 14px;
-  color: #ffffff;
-  height: 50px;
-  }
-
-  .info-left, .info-right {
-    display: flex;
-  align-items: center; 
-  gap: 20px;
-  margin-left: 20px;
-  }
-
+  /* Solo muestra la lista pura de enlaces alineados */
   .navigation-menu {
     flex-direction: column;
     height: auto;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation-menu a {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    padding: 4px 0;
   }
 }
 
-/* Ajuste específico para que el logo no tape contenido en móvil muy pequeño */
-@media (max-width: 480px) {
-  .logo-box {
-    width: 120px;
-    height: 120px;
-    padding: 15px;
-    left: 0; /* Lo movemos al borde izquierdo */
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+/* ==========================================
+   RESPONSIVIDAD MÓVIL PARA SECTION 1
+   ========================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 600px; /* Reducimos la altura para que el video y el contenido se vean proporcionados */
+    padding-top: 60px; /* Espacio para que el botón hamburguesa no tape el texto */
   }
-  .header-right-content {
-    padding-left: 0;
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px !important;
+    margin: 0 auto !important;
+    text-align: center; /* Centra el texto y el botón en móviles */
+  }
+
+  .hero-title {
+    font-size: 32px !important; /* Disminuye la letra para que quepa completa */
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .highlight-red {
+    padding: 2px 10px !important; /* Ajusta la caja roja para que no desborde */
+    display: inline-block !important;
+  }
+
+  .hero-subtitle {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin: 0 auto 25px auto !important;
+    max-width: 290px !important;
+  }
+
+  .hero-button {
+    width: 100% !important; /* Botón adaptable al ancho del celular */
+    max-width: 280px !important;
+    padding: 14px 15px !important;
+    font-size: 13px !important;
+    margin: 0 auto !important;
   }
 }

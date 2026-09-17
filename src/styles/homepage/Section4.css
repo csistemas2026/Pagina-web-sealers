@@ -101,3 +101,68 @@
   font-size: 14px;
   font-weight: bold;
 }
+
+/* ==========================================
+   AJUSTE RESPONSIVO (IPHONE 14 PRO Y MÓVILES)
+   ========================================== */
+
+@media (max-width: 768px) {
+  .section4-container {
+    padding: 40px 0;
+  }
+
+  .section4-content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .section4-image-side {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .product-img-plastico {
+    max-width: 100%;
+    max-height: 280px;
+  }
+
+  .section4-text-side {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .section4-tag {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .section4-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+  }
+
+  /* Oculta saltos de línea manuales para no desbalancear el título */
+  .section4-title br {
+    display: none;
+  }
+
+  .section4-description {
+    font-size: 15px;
+    margin-bottom: 25px;
+    max-width: 100%;
+  }
+
+  .section4-btn {
+    width: 100%;
+    max-width: 290px;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+}

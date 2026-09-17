@@ -27,7 +27,7 @@ function Section6() {
             Protección que fortalece tu operación.
           </p>
           <button className="section6-btn">
-            DESCUBRE TU SOLUCIÓN DE SEGURIDAD <span className="btn-arrow">›</span>
+            DESCUBRE TU SOLUCIÓN DE SEGURIDAD <span className="btn-arrow"></span>
           </button>
         </div>
 

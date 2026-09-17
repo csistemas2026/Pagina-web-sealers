@@ -61,7 +61,7 @@ function Header() {
           <nav className="navigation-menu">
             <Link to="/conocenos" onClick={() => setIsOpen(false)}>CONÓCENOS</Link>
             <a href="/categorias" onClick={() => setIsOpen(false)}>PRODUCTOS</a>
-            <a href="#seguridad" onClick={() => setIsOpen(false)}>SEGURIDAD SATELITAL</a>
+            <a href="/seguridad" onClick={() => setIsOpen(false)}>SEGURIDAD SATELITAL</a>
             <a href="/cursos" onClick={() => setIsOpen(false)}>CURSOS</a>
             <a href="#sostenibilidad" onClick={() => setIsOpen(false)}>SOSTENIBILIDAD</a>
             <a href="/blog" onClick={() => setIsOpen(false)}>BLOG</a>

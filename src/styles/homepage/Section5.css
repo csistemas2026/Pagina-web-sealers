@@ -105,3 +105,66 @@
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
 }
+
+/* ==========================================
+   AJUSTE RESPONSIVO (IPHONE 14 PRO Y MÓVILES)
+   ========================================== */
+
+@media (max-width: 768px) {
+  .section5-container {
+    padding: 40px 0;
+  }
+
+  .section5-content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .section5-text-side {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .section5-tag {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .section5-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+  }
+
+  /* Oculta saltos de línea para evitar desalineación en pantallas angostas */
+  .section5-title br {
+    display: none;
+  }
+
+  .section5-description {
+    font-size: 15px;
+    margin-bottom: 25px;
+    max-width: 100%;
+  }
+
+  .section5-btn {
+    width: 100%;
+    max-width: 290px;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+
+  .section5-image-side {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .product-img-candados {
+    max-height: 280px;
+  }
+}

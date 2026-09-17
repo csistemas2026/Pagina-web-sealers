@@ -10,5 +10,23 @@ export const blogArticles = [
     location: "MINCETUR - San Isidro",
     date: "22 de junio de 2026",
     image: imgLogistica
+  },
+
+  {
+    id: 2,
+    category: "NOTICIAS",
+    title: "Seguridad en la Cadena Logística de comercio",
+    location: "MINCETUR - San Isidro",
+    date: "22 de junio de 2026",
+    image: imgLogistica
+  },
+
+  {
+    id: 3,
+    category: "NOTICIAS",
+    title: "Seguridad en la Cadena Logística de comercio",
+    location: "MINCETUR - San Isidro",
+    date: "22 de junio de 2026",
+    image: imgLogistica
   }
 ];

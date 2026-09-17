@@ -18,7 +18,7 @@ function Section5() {
             Soluciones que protegen cada movimiento de tu mercancía.
           </p>
           <button className="section5-btn">
-            DESCUBRE TU SOLUCIÓN DE SEGURIDAD <span className="btn-arrow">›</span>
+            DESCUBRE TU SOLUCIÓN DE SEGURIDAD <span className="btn-arrow"></span>
           </button>
         </div>
 

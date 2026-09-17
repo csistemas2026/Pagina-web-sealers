@@ -27,7 +27,7 @@ function Section4() {
             Control e integridad en cada operación.
           </p>
           <button className="section4-btn">
-            DESCUBRE TU SOLUCIÓN DE SEGURIDAD <span className="btn-arrow">›</span>
+            DESCUBRE TU SOLUCIÓN DE SEGURIDAD <span className="btn-arrow"></span>
           </button>
         </div>
 

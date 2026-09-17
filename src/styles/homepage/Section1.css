@@ -2,7 +2,7 @@
 .hero-section {
   width: 100%;
   min-height: 850px; /* Ajusta la altura para que se vea toda la escena del camión */
-  background-image: url('../../assets/images/section1.png');
+  background-image: url('../../assets/images/inicio.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,20 +17,11 @@
 
 /* Contenedor del texto alineado a la izquierda con la misma grilla del Header (1200px) */
 .hero-content {
-  
-  
   max-width: 1200px;
   width: 70%;
-  
-  /* CAMBIO AQUÍ: 
-     Si quieres moverlo a la derecha, aumenta el margen izquierdo 
-     o simplemente elimina el 'auto' y usa un valor fijo. 
-  */
   margin: 0;            /* Quitamos el 'auto' para que no se centre */
-  
   padding: 0 20px;
   text-align: left;
-  /*margin-top: -120px; */
 }
 
 /* El título principal corregido */
@@ -78,4 +69,50 @@
 
 .hero-button:hover {
   background-color: #b31d24;
+}
+
+/* ==========================================
+   AJUSTE CENTRADO PARA IPHONE 14 PRO Y MÓVILES
+   ========================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 650px;
+    padding-top: 60px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .highlight-red {
+    padding: 2px 10px;
+    margin-top: 5px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin: 0 auto 25px auto;
+    max-width: 320px;
+  }
+
+  .hero-button {
+    width: 100%;
+    max-width: 290px;
+    padding: 14px 20px;
+    font-size: 14px;
+    margin: 0 auto;
+    display: block;
+  }
 }
