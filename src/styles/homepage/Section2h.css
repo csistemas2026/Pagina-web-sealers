@@ -1,7 +1,12 @@
+/* ==========================================================================
+   SECTION 2 - GENERELLE STILER (DESKTOP)
+   ========================================================================== */
+
 .section2-contenedor {
   padding: 60px 20px;
   background-color: #f9f9f9;
   text-align: center;
+  overflow-x: hidden; /* Forhindrer vandret scroll */
 }
 
 .section2-contenido {
@@ -22,7 +27,8 @@
 
 .linea-titulo {
   display: block;
-  width: 400px;
+  width: 100%;
+  max-width: 400px; /* Fleksibel i stedet for fast width */
   height: 4px;
   background-color: #b31a1a;
   margin: 0 auto 40px auto;
@@ -30,7 +36,7 @@
 
 .section2-experiencia {
   font-size: 2.5rem;
-  margin-bottom: 55px;
+  margin-bottom: 30px;
   color: #031b2f;
   font-weight: bold;
 }
@@ -38,7 +44,7 @@
 .section2-descripcion {
   font-size: 1.3rem;
   color: #0a0000;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   max-width: 900px;
   text-align: center;
   line-height: 1.6;
@@ -49,6 +55,7 @@
   max-width: 1100px;
   margin: 0 auto 50px auto;
   padding: 20px 0;
+  position: relative;
 }
 
 .section2-carousel-wrapper .swiper-wrapper {
@@ -79,6 +86,7 @@
   justify-content: center;
   width: 100%;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .icon-circle {
@@ -122,11 +130,75 @@
   background-color: #8b1515;
 }
 
+
+/* ==========================================================================
+   MOBILTILPASNING (IPHONE 14 PRO OG MOBILER ≤ 768px)
+   ========================================================================== */
+
 @media (max-width: 768px) {
-  .section2-titulo {
-    font-size: 2.2rem;
+  .section2-contenedor {
+    padding: 40px 16px;
+    overflow-x: hidden;
   }
-  .section2-carousel-wrapper {
+
+  .section2-titulo {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .linea-titulo {
+    max-width: 180px;
+    margin-bottom: 25px;
+  }
+
+  .section2-experiencia {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .section2-descripcion {
+    font-size: 0.95rem;
     margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  /* Ajuste de centrado perfecto para el carrusel */
+  .section2-carousel-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .section2-carousel-wrapper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+  }
+
+  .carousel-card {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .icon-circle {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px auto;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .section2-btn {
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.95rem;
+    padding: 12px 16px;
   }
 }

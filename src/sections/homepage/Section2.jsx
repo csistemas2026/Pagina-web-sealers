@@ -36,19 +36,31 @@ function Section2() {
         <h3 className="section2-experiencia">36 Años de Experiencia</h3>
         <p className="section2-descripcion">Hemos protegido <strong>millones de envíos</strong> y operaciones logísticas en Perú y Latinoamérica.</p>
         
-        <Swiper
-          modules={[Autoplay, Navigation]}
-          spaceBetween={30}
-          slidesPerView={3}
-          navigation={true}
-          loop={true}
-          speed={800}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          className="section2-carousel-wrapper"
-        >
+       <Swiper
+  modules={[Autoplay, Navigation]}
+  navigation={false}
+  loop={true}
+  speed={800}
+  autoplay={{
+    delay: 4000,
+    disableOnInteraction: false,
+  }}
+  breakpoints={{
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  }}
+  className="section2-carousel-wrapper"
+>
           {items.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="carousel-card">

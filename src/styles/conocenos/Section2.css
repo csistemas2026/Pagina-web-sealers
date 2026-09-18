@@ -1,15 +1,31 @@
+/* src/styles/conocenos/Section2.css */
+
 .section2-container {
   padding: 150px 20px 100px 20px; 
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .section2-title {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   color: #003366;
-  font-size: 3rem;     /* Aumenta este valor (prueba 2.8rem, 3rem, o 3.2rem) */
+  font-size: 3rem;
   font-weight: 700;
+  position: relative;
 }
 
+.section2-title::after {
+  content: '';
+  display: block;
+  margin: 25px auto 0;
+  width: 100%;
+  max-width: 350px;
+  height: 4px;
+  background-color: #ff3b30;
+  border-radius: 5px;
+}
 
 .timeline {
   display: flex;
@@ -17,25 +33,10 @@
   align-items: center;
   max-width: 1000px;  
   position: relative;
-  margin-top: 70px; /* Aumenta este número (ej. 90px) si quieres separarlo aún más de la raya roja */
-  
-  margin-bottom: 50px; 
-  margin-left: auto;
-  margin-right: auto;
-  
+  margin: 70px auto 50px auto;
 }
 
-.section2-title::after {
-  content: '';
-  display: block;
-  margin: 35px auto -5px;  /* 15px de espacio arriba, centrado automático */
-  width: 350px;         /* AUMENTA ESTE VALOR para hacerla más ancha (ej. 150px o 200px) */
-  height: 4px;          /* Opcional: Aumenta la altura para que sea más gruesa */
-  background-color: #ff3b30; /* El color rojo */
-  border-radius: 5px;   /* Opcional: Bordes redondeados para un look pro */
-}
-
-/* Línea de fondo (gris tenue) */
+/* Línea de fondo (horizontal en desktop) */
 .timeline::before {
   content: "";
   position: absolute;
@@ -45,16 +46,16 @@
   height: 4px;
   background: #acaaaa;
   z-index: 0;
+  transform: translateY(-50%);
 }
 
 .timeline-item {
   flex: 1;
   position: relative;
   z-index: 1;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto resorte suave */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Efecto al pasar el cursor: el bloque entero se desliza hacia arriba */
 .timeline-item:hover {
   transform: translateY(-15px);
 }
@@ -71,7 +72,7 @@
 }
 
 .timeline-item:hover .circle {
-  background: #ff3b30; /* Cambia a rojo al interactuar */
+  background: #ff3b30;
   box-shadow: 0 0 0 6px rgba(255, 59, 48, 0.3);
 }
 
@@ -87,29 +88,73 @@
   margin-top: 5px;
 }
 
-/* --- ADAPTACIÓN A CELULARES --- */
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA (MÓVILES ≤ 768px)
+   ========================================== */
 @media (max-width: 768px) {
-  .timeline {
-    flex-direction: column; /* Cambia a vertical */
-    align-items: flex-start;
-    margin-left: 40px;
+  .section2-container {
+    padding: 50px 20px 40px 20px;
   }
-  
+
+  .section2-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .section2-title::after {
+    max-width: 160px;
+    margin-top: 15px;
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px auto 20px auto;
+    padding-left: 30px;
+    max-width: 320px;
+  }
+
+  /* La línea pasa a ser vertical alineada a la izquierda */
   .timeline::before {
-    left: 10px; /* La línea se mueve a la izquierda */
     top: 0;
+    left: 8px;
     width: 4px;
     height: 100%;
+    transform: none;
   }
 
   .timeline-item {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-align: left;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-left: 25px;
   }
 
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-item:hover {
+    transform: translateX(5px); /* Desplazamiento horizontal en lugar de vertical */
+  }
+
+  /* Círculo anclado exactamente sobre la línea vertical */
   .circle {
-    margin: 0 20px 0 0; /* Acomoda el círculo a la izquierda */
+    position: absolute;
+    left: -20px;
+    top: 2px;
+    margin: 0;
+  }
+
+  .year {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    margin-top: 3px;
   }
 }

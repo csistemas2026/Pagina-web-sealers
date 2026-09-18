@@ -1,14 +1,20 @@
+/* src/styles/producto/main.css */
 
 .main-page-container {
   background-color: #f4f6f9;
-  min-height: 120vh;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+/*----------- SECCIÓN 1: PRODUCTOS PRINCIPALES -----------*/
 .main-productos-section {
-  padding: 60px;
+  padding: 60px 20px;
   max-width: 1400px;
-  margin: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .main-header {
@@ -31,10 +37,10 @@
 .main-productos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 55px;
-
+  gap: 40px;
 }
 
+/*----------- TARJETAS DE PRODUCTOS -----------*/
 .main-card {
   background-color: #ffffff;
   border-radius: 8px;
@@ -62,7 +68,7 @@
   object-fit: cover;
 }
 
-/* --- Efecto Overlay Hover (Idéntico al menú) --- */
+/*----------- OVERLAY INTERACTIVO -----------*/
 .main-card-overlay {
   position: absolute;
   top: 0;
@@ -78,7 +84,6 @@
   text-align: center;
   padding: 15px;
   box-sizing: border-box;
-  
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -113,7 +118,7 @@
   line-height: 1.2;
 }
 
-/* Paginación */
+/*----------- PAGINACIÓN -----------*/
 .main-pagination {
   display: flex;
   justify-content: center;
@@ -133,23 +138,21 @@
   font-size: 0.85rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.page-dot.active {
+.page-dot.active,
+.page-dot:hover {
   background-color: #0b2545;
   color: #ffffff;
 }
 
-
-/*---------------SECCION MAS SOLUCIONES---------*/
-
+/*----------- SECCIÓN 2: MÁS SOLUCIONES -----------*/
 .more-solutions-section {
-  max-width: 1200px;
-  margin: 0px auto 0px auto;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+  box-sizing: border-box;
 }
 
 .solutions-header {
@@ -163,21 +166,98 @@
   margin-bottom: 8px;
 }
 
-.red-divider {
-  width: 120px;
-  height: 3px;
-  background-color: #dc2626;
-}
-
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  gap: 20px;
 }
 
-@media (max-width: 900px) {
-  .solutions-grid {
+/* ==========================================
+   TABLETS Y PANTALLAS MEDIANAS (≤ 1024px)
+   ========================================== */
+@media (max-width: 1024px) {
+  .main-productos-section {
+    padding: 40px 20px;
+  }
+
+  .main-productos-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
   }
 }
 
+/* ==========================================
+   MÓVILES (≤ 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .main-productos-section {
+    padding: 25px 15px;
+  }
+
+  .main-productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .main-card-img-box {
+    height: 220px;
+  }
+
+  /* Overlay optimizado para pantallas táctiles */
+  .main-card-overlay {
+    opacity: 1;
+    visibility: visible;
+    background: linear-gradient(to top, rgba(11, 37, 69, 0.95) 0%, rgba(11, 37, 69, 0.35) 100%);
+    justify-content: flex-end;
+    padding: 12px;
+  }
+
+  .eye-icon {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+  }
+
+  .main-card-cat {
+    font-size: 0.7rem;
+  }
+
+  .main-card-title {
+    font-size: 0.95rem;
+  }
+
+  .more-solutions-section {
+    padding: 0 15px 40px 15px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* ==========================================
+   MÓVILES PEQUEÑOS (≤ 480px)
+   ========================================== */
+@media (max-width: 480px) {
+  .main-productos-grid,
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .main-card-img-box {
+    height: 260px;
+  }
+
+  .main-header h2,
+  .solutions-header h2 {
+    font-size: 1.3rem;
+  }
+}

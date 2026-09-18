@@ -2,21 +2,22 @@
 
 .certificaciones-container {
     text-align: center;
-    padding: 100px 40px; /* Aumentamos el padding para más aire */
+    padding: 100px 40px;
     background-color: #f9f9f9;
+    overflow-x: hidden;
 }
 
 .certificaciones-title {
     color: #003366;
     font-size: 3.5rem;
-    margin-bottom: 40px; /* Aumentado para dar espacio a la línea */
+    margin-bottom: 40px;
     font-weight: bold;
-    position: relative; /* ESTO ES LO QUE FALTABA */
-    padding-bottom: 20px; /* Espacio para que la línea no toque las letras */
+    position: relative;
+    padding-bottom: 20px;
 }
 
 .certificaciones-title::after {
-  content: "";
+    content: "";
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -27,31 +28,81 @@
     border-radius: 2px;
 }
 
-
 .certificaciones-subtitle {
     color: #444;
-    font-size: 1.5rem; /* Subtítulo más legible */
+    font-size: 1.5rem;
     margin-bottom: 60px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.5;
 }
 
 .certificaciones-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px; /* Más espacio entre fotos */
+    gap: 80px;
     flex-wrap: wrap;
 }
 
 .certificaciones-grid img {
-    max-width: 220px; /* Fotos mucho más grandes */
+    max-width: 220px;
     height: auto;
-    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+    transition: transform 0.3s ease;
 }
 
-/* Opcional: efecto al pasar el mouse */
 .certificaciones-grid img:hover {
     transform: scale(1.1);
+}
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA (MÓVILES)
+   ========================================== */
+@media (max-width: 768px) {
+    .certificaciones-container {
+        padding: 50px 20px;
+    }
+
+    .certificaciones-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+    }
+
+    .certificaciones-title::after {
+        width: 120px;
+        height: 3px;
+    }
+
+    .certificaciones-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .certificaciones-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas parejas en móvil */
+        gap: 30px 20px;
+        justify-items: center;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .certificaciones-grid img {
+        max-width: 130px; /* Tamaño equilibrado para grilla de 2 */
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .certificaciones-grid {
+        grid-template-columns: 1fr; /* 1 columna para pantallas muy angostas */
+        gap: 25px;
+    }
+
+    .certificaciones-grid img {
+        max-width: 160px;
+    }
 }

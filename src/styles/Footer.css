@@ -1,24 +1,27 @@
 /* ==========================================================================
-   FOOTER PRINCIPAL
+   FOOTER PRINCIPAL - ESTILOS GENERALES (DESKTOP)
    ========================================================================== */
-/* Contenedor principal con fondo oscuro profesional */
+
+/* Contenedor principal */
 .site-footer {
-  background-color: rgba(8, 93, 179, 0.6); /* Tu color azul */
+  background-color: rgba(8, 93, 179, 0.6);
   color: #ffffff;
   padding: 40px 20px 20px;
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden; /* Evita desbordamiento horizontal global */
 }
 
 .footer-container {
   max-width: 1300px;
   margin: 0 auto;
   display: grid;
-  /* Creamos 5 columnas con sus tamaños proporcionales */
   grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
   gap: 70px;
   align-items: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Columna de la marca / logo */
@@ -39,6 +42,7 @@
   font-size: 15px;
   margin: 10px 0;
   color: #f1efef;
+  line-height: 1.5;
 }
 
 .footer-divider-red {
@@ -53,6 +57,7 @@
 .info-item {
   margin-bottom: 8px;
   font-size: 15px;
+  line-height: 1.4;
 }
 
 /* Títulos de sección */
@@ -60,9 +65,10 @@
   font-size: 14px;
   margin-bottom: 15px;
   color: #fff;
-  border-bottom: 2px solid #b31a1a; /* Línea roja pequeña */
+  border-bottom: 2px solid #b31a1a;
   display: inline-block;
   padding-bottom: 5px;
+  font-weight: bold;
 }
 
 /* Listas de enlaces */
@@ -90,7 +96,8 @@
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: #ffffff;
+  opacity: 0.8;
 }
 
 .arrow-red {
@@ -180,54 +187,96 @@
   color: #e2e8f0;
 }
 
-/* ==========================================
-   AJUSTE RESPONSIVO (IPHONE 14 PRO Y MÓVILES)
-   ========================================== */
+
+/* ==========================================================================
+   AJUSTE RESPONSIVO (IPHONE 14 PRO Y MÓVILES ≤ 768px)
+   ========================================================================== */
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 40px 20px 20px 20px;
+    padding: 30px 16px 20px 16px;
   }
 
   .footer-container {
-    grid-template-columns: 1fr; /* Apilamos todas las columnas verticalmente */
-    gap: 35px;
+    grid-template-columns: 1fr; /* Una sola columna alineada */
+    gap: 30px;
     text-align: center;
+    align-items: center;
   }
 
+  /* Columna 1: Marca y Datos de Contacto */
   .col-brand {
     max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .footer-logo-img {
     margin: 0 auto 15px auto;
   }
 
+  .footer-description {
+    max-width: 320px;
+    margin: 0 auto 10px auto;
+    word-break: break-word;
+  }
+
   .footer-divider-red {
     margin: 15px auto;
   }
 
+  .footer-info-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    word-break: break-word;
+    gap: 6px;
+  }
+
+  /* Secciones y Listas */
   .footer-title {
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
   }
 
   .footer-links {
-    align-items: center; /* Centra los enlaces en móvil */
+    align-items: center;
+    width: 100%;
   }
 
   .footer-links li {
     justify-content: center;
   }
 
+  /* Redes Sociales */
+  .siguenos-text {
+    max-width: 300px;
+    margin: 0 auto 15px auto;
+  }
+
   .social-icons {
     justify-content: center;
-    margin-left: 0;
+    margin: 15px auto 0 auto;
+  }
+
+  /* Libro de Reclamaciones */
+  .reclamaciones-content {
+    align-items: center;
   }
 
   .btn-libro {
-    max-width: 250px;
+    max-width: 240px;
+    margin: 0 auto;
   }
 }

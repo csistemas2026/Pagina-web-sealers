@@ -1,8 +1,13 @@
+/* src/styles/conocenos/Section8.css */
+
 .section8-container {
     background-color: #e8f3e5; /* Verde muy claro de fondo */
     padding: 80px 40px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .section8-content {
@@ -10,6 +15,8 @@
     align-items: center;
     gap: 50px;
     max-width: 1100px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section8-image {
@@ -20,6 +27,8 @@
 .section8-image img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .section8-text {
@@ -32,13 +41,15 @@
     font-size: 2.5rem;
     margin-bottom: 15px;
     line-height: 1.2;
+    font-weight: bold;
 }
 
 .section8-line {
-    width: 250px; 
+    width: 100%;
+    max-width: 250px; 
     height: 3px;
     background-color: #004d1a; /* Verde oscuro */
-    margin: 15px auto; /* "auto" es lo que centra la línea horizontalmente */
+    margin: 15px auto; /* "auto" centra la línea horizontalmente */
 }
 
 .section8-description {
@@ -47,4 +58,47 @@
     line-height: 1.6;
     margin-top: 20px;
     padding: 0 20px; /* Un poco de aire a los lados */
+}
+
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA (MÓVILES ≤ 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .section8-container {
+        padding: 40px 16px;
+    }
+
+    .section8-content {
+        flex-direction: column; /* Apila imagen arriba y texto abajo */
+        gap: 25px;
+    }
+
+    .section8-image {
+        width: 100%;
+    }
+
+    .section8-image img {
+        max-width: 260px; /* Tamaño equilibrado para la imagen en móvil */
+    }
+
+    .section8-text {
+        width: 100%;
+    }
+
+    .section8-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .section8-line {
+        max-width: 160px; /* Ajusta la barra decorativa */
+        margin: 12px auto;
+    }
+
+    .section8-description {
+        font-size: 0.95rem;
+        padding: 0 5px;
+        margin-top: 15px;
+    }
 }

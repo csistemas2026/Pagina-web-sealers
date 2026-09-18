@@ -1,8 +1,10 @@
+/* src/styles/conocenos/Section3.css */
+
 .section3-mission {
   /* Fondo con transición suave */
   background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), 
               url('../../assets/images/conocenossection3.png');
-              transition: background-position 0.5s ease;
+  transition: background-position 0.5s ease;
   
   background-size: cover;
   background-position: center;
@@ -11,13 +13,16 @@
   padding: 150px 20px;
   text-align: center;
   color: white;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
   
   /* Animación de entrada suave */
   animation: fadeInSection 1.2s ease-out;
 }
 
 .section3-mission:hover {
-  background-position: center 45%; /* La imagen se desplaza ligeramente al hacer hover */
+  background-position: center 45%;
 }
 
 .mission-content {
@@ -26,8 +31,8 @@
 }
 
 .section3-mission h2 {
-  font-size: 3.8rem; /* Un poco más grande para imponer */
-  font-weight: 800;  /* Más negrita */
+  font-size: 3.8rem;
+  font-weight: 800;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -43,15 +48,57 @@
 }
 
 .line-red {
-  width: 80px; /* Un poco más larga */
+  width: 80px;
   height: 5px;
   background: #d32f2f;
   margin: 0 auto 30px;
-  border-radius: 2px; /* Bordes redondeados para un toque moderno */
+  border-radius: 2px;
 }
 
 /* Definición de la animación */
 @keyframes fadeInSection {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA (MÓVILES ≤ 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  .section3-mission {
+    padding: 70px 20px; /* Reduce la altura exagerada en pantallas pequeñas */
+  }
+
+  .section3-mission h2 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .line-red {
+    width: 60px;
+    height: 4px;
+    margin: 0 auto 20px auto;
+  }
+
+  .section3-mission p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .section3-mission {
+    padding: 55px 15px;
+  }
+
+  .section3-mission h2 {
+    font-size: 1.8rem;
+  }
+
+  .section3-mission p {
+    font-size: 1rem;
+  }
 }

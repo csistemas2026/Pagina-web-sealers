@@ -1,56 +1,83 @@
+/* src/styles/conocenos/Section5.css */
+
 .section5-container {
   padding: 60px 20px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .logos-grid {
   display: flex;
-  flex-wrap: wrap; /* Permite que bajen a la siguiente fila */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px; 
+  gap: 50px; 
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
 }
 
 .logo-wrapper {
-  /* En lugar de usar porcentajes que los encogen, 
-     usamos un ancho mínimo amplio */
-  flex: 0 0 250px; /* Cada logo intentará medir 250px de ancho */
+  flex: 0 1 220px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .logo-wrapper:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
-/*.logo-img {
-  width: 100%; 
+.logo-img {
+  width: 100%;
+  max-width: 200px; 
   height: auto;
-  max-width: 280px; 
-  transition: opacity 0.3s ease;
+  object-fit: contain;
+  display: block;
 }
 
-/* Ajustes para celulares */
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA (MÓVILES ≤ 768px)
+   ========================================== */
 @media (max-width: 768px) {
-  .logos-grid {
-    gap: 30px;
+  .section5-container {
+    padding: 40px 16px;
   }
-  
+
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Disposición 2x2 uniforme */
+    gap: 30px 20px;
+    align-items: center;
+    justify-items: center;
+    max-width: 400px;
+  }
+
   .logo-wrapper {
-    flex: 0 0 250px;
+    width: 100%;
+    flex: none;
+    padding: 5px;
+  }
+
+  .logo-img {
+    max-width: 130px; /* Tamaño controlado para evitar desbordes */
   }
 }
 
-@media (max-width: 480px) {
-  .logo-wrapper {
-    flex: 0 0 calc(90% - 30px); /* 1 logo por fila en pantallas muy pequeñas */
+@media (max-width: 380px) {
+  .logos-grid {
+    grid-template-columns: 1fr; /* 1 logo por fila en pantallas muy angostas */
+    gap: 25px;
+  }
+
+  .logo-img {
+    max-width: 160px;
   }
 }
