@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/homepage/Section9.css';
-import { blogArticles } from '../../data/blogData'; // 👈 Importamos tu variable central de datos
+import blogPosts from '../../data/blogData.js'; // 👈 Importamos tu variable central de datos
 
 function Section9() {
   return (
@@ -15,7 +15,7 @@ function Section9() {
         <div className="blog-grid">
           
           {/* 👈 Recorremos el array para renderizar cada tarjeta automáticamente */}
-          {blogArticles.map((article) => (
+          {blogPosts.map((article) => (
             <article className="blog-card" key={article.id}>
               <div className="blog-card-image">
                 <img src={article.image} alt={article.title} />

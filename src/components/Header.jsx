@@ -13,7 +13,7 @@ function Header() {
         {/* LADO IZQUIERDO: Logo */}
         <div className="logo-box">
           <Link to="/">
-          <img src={logoheader} alt="Corporación Sealers S.A." className="site-logo"/>
+            <img src={logoheader} alt="Corporación Sealers S.A." className="site-logo"/>
           </Link>
         </div>
 
@@ -47,23 +47,55 @@ function Header() {
                 <a href="mailto:venta@sealers.com.pe" className="top-link">venta@sealers.com.pe</a>
               </div>
               <div className="info-lang">                
-                  <img src="https://flagcdn.com/w40/es.png" alt="España" 
-                  style={{ width: '30px', /* Un poco más pequeño para que no desentone con los iconos */
-      height: 'auto', 
-      display: 'inline-block', 
-      borderRadius: '3px',
-      verticalAlign: 'middle' }} />
-                
+                <img src="https://flagcdn.com/w40/es.png" alt="España" className="flag-icon" />
               </div>
             </div>
           </div>
 
           <nav className="navigation-menu">
             <Link to="/conocenos" onClick={() => setIsOpen(false)}>CONÓCENOS</Link>
-            <a href="/categorias" onClick={() => setIsOpen(false)}>PRODUCTOS</a>
-            <a href="/seguridad" onClick={() => setIsOpen(false)}>SEGURIDAD SATELITAL</a>
-            <a href="/cursos" onClick={() => setIsOpen(false)}>CURSOS</a>
-            <a href="#sostenibilidad" onClick={() => setIsOpen(false)}>SOSTENIBILIDAD</a>
+
+            {/* MENÚ DESPLEGABLE DE PRODUCTOS */}
+            <div className="nav-dropdown-wrapper">
+              <a href="/categorias" onClick={() => setIsOpen(false)}>PRODUCTOS</a>
+
+              {/* NIVEL 1 */}
+              <ul className="dropdown-level-1">
+                <li className="has-submenu">
+                  <a href="#alta-seguridad">PRECINTOS DE ALTA SEGURIDAD (H)</a>
+                  {/* NIVEL 2 */}
+                  <ul className="dropdown-level-2">
+                    <li><a href="#metalico-flexible-h">METÁLICO FLEXIBLE</a></li>
+                    <li><a href="#metalico-rigido-h">METÁLICO RÍGIDO</a></li>
+                  </ul>
+                </li>
+
+                <li className="has-submenu">
+                  <a href="#seguridad">PRECINTOS DE SEGURIDAD (S)</a>
+                  {/* NIVEL 2 */}
+                  <ul className="dropdown-level-2">
+                    <li><a href="#metalico-flexible-s">METÁLICO FLEXIBLE</a></li>
+                  </ul>
+                </li>
+
+                <li className="has-submenu">
+                  <a href="#indicativos">PRECINTOS INDICATIVOS (I)</a>
+                  {/* NIVEL 2 */}
+                  <ul className="dropdown-level-2">
+                    <li><a href="#plastico-ajustable">PLÁSTICO AJUSTABLE</a></li>
+                    <li><a href="#plastico-fijo">PLÁSTICO FIJO</a></li>
+                    <li><a href="#tipo-flecha">TIPO FLECHA</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="#especiales">PRECINTOS ESPECIALES</a></li>
+                <li><a href="#kits">KITS ESPECIALIZADOS</a></li>
+                <li><a href="#big-bag">BOLSAS BIG BAG</a></li>
+              </ul>
+            </div>
+
+            <a href="/seguridad" onClick={() => setIsOpen(false)}>SEGURIDAD ELECTRÓNICA</a>
+            <a href="/sostenibilidad" onClick={() => setIsOpen(false)}>SOSTENIBILIDAD</a>
             <a href="/blog" onClick={() => setIsOpen(false)}>BLOG</a>
             <a href="/contacto" onClick={() => setIsOpen(false)}>CONTACTO</a>
           </nav>

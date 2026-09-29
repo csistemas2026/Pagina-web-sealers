@@ -50,7 +50,7 @@ function Footer() {
             <li><a href="/blog"><span className="arrow-red">&gt;</span> Noticias</a></li>
             <li><a href="/blog"><span className="arrow-red">&gt;</span> Eventos</a></li>
             <li><a href="#normativa"><span className="arrow-red">&gt;</span> Normativa</a></li>
-            <li><a href="#sostenibilidad"><span className="arrow-red">&gt;</span> Sostenibilidad</a></li>
+            <li><a href="/sostenibilidad"><span className="arrow-red">&gt;</span> Sostenibilidad</a></li>
           </ul>
         </div>
 

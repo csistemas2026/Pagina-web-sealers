@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/cursos/course.css';
-import '../../styles/contacto/Section1.css';
 
 /*import imgContenedores from '../../assets/images/planta.png'; // Reemplaza con tu imagen real
 import imgPrecintos from '../../assets/images/tecnologia.png';     // Reemplaza con tu imagen real

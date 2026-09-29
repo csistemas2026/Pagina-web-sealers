@@ -1,0 +1,211 @@
+/* ===================================================
+   PÁGINA SEGURIDAD ELECTRÓNICA
+   =================================================== */
+
+.seguridad-page-container {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.seguridad-container {
+  max-width: 1200px; /* Ampliado para acomodar tarjetas más grandes */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- 1. SECCIÓN PRODUCTOS PRINCIPALES --- */
+.seguridad-main-products {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.products-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px; /* Incrementado para mejor separación entre tarjetas */
+  justify-content: center;
+  max-width: 950px; /* Ampliado de 800px a 950px */
+  margin: 0 auto;
+}
+
+.product-card {
+  position: relative;
+  border-radius: 12px; /* Bordes ligeramente más suaves */
+  overflow: hidden;
+  height: 320px; /* Aumentado de 240px a 320px */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02); /* Efecto de elevación más pronunciado */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05); /* Zoom sutil a la imagen al pasar el cursor */
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* Capa oscura para legibilidad del texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  pointer-events: none; /* Permite que el clic atraviese al contenedor */
+}
+
+.product-card .card-overlay h3 {
+  color: #ffffff;
+  font-size: 1.6rem; /* Aumentado de 1.3rem a 1.6rem */
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin: 0;
+  line-height: 1.2;
+  pointer-events: none; /* Evita interferencias en el evento de clic */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 2. SECCIÓN SOLUCIONES PARA INDUSTRIAS --- */
+.seguridad-industrias-section {
+  background-color: #f5f6f8; /* Fondo gris claro */
+  padding: 60px 0 80px 0;
+}
+
+.industrias-title {
+  color: #031b2f;
+  font-size: 2rem; /* Aumentado de 1.8rem a 2rem */
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.red-divider {
+  width: 160px;
+  height: 3px;
+  background-color: #b31a1a;
+  margin-bottom: 40px;
+}
+
+.industrias-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.industria-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 240px; /* Aumentado de 200px a 240px */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.industria-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.industria-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.industria-card .card-overlay {
+  pointer-events: none;
+}
+
+.industria-card .card-overlay h4 {
+  color: #ffffff;
+  font-size: 1.25rem; /* Aumentado de 1.1rem a 1.25rem */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* --- 3. BANNER PROMOCIONAL INFERIOR --- */
+.seguridad-promo-banner {
+  width: 100%;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.promo-content {
+  width: 100%;
+}
+
+.promo-text h2 {
+  color: #ffffff;
+  font-size: 2.2rem; /* Aumentado levemente para guardar proporción */
+  font-weight: 800;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================================
+   RESPONSIVIDAD (MÓVILES Y TABLETS)
+   =================================================== */
+
+@media (max-width: 900px) {
+  .products-grid-2 {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
+
+  .product-card {
+    height: 260px; /* Altura ajustada para pantallas reducidas */
+  }
+
+  .industrias-grid-3 {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .industria-card {
+    height: 200px;
+  }
+
+  .promo-text h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .industrias-title {
+    text-align: center;
+  }
+
+  .red-divider {
+    margin: 0 auto 30px auto;
+  }
+}

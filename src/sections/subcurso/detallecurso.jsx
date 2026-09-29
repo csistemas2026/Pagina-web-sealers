@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import '../../styles/contacto/Section1.css';
 import fondopro from '../../assets/images/fondopro.jpg';
 import imgContenedores from '../../assets/images/planta.png';
 import imgPrecintos from '../../assets/images/tecnologia.png';

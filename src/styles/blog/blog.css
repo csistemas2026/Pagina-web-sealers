@@ -6,7 +6,7 @@
   padding-bottom: 60px;
 }
 
-/* Estilo del banner superior si lo usas */
+/* Estilo del banner superior */
 .section1-banner {
   position: relative;
   height: 250px;
@@ -53,6 +53,15 @@
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 30px;
   margin-bottom: 50px;
+  align-items: stretch;
+}
+
+/* Enlace envolvente de React Router */
+.blog-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 100%;
 }
 
 /* --- Tarjeta Individual --- */
@@ -63,6 +72,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -71,18 +82,21 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor de la imagen superior */
+/* Contenedor de la imagen superior de la tarjeta */
 .blog-img-container {
   width: 100%;
   height: 210px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .blog-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  object-position: center top;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
 .blog-card:hover .blog-img {
@@ -91,9 +105,12 @@
 
 /* Textos de la tarjeta */
 .blog-text-content {
-  padding: 20px 20px 10px 20px;
+  padding: 20px 20px 15px 20px;
   text-align: center;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .blog-category {
@@ -111,11 +128,15 @@
   font-weight: 700;
   line-height: 1.4;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Pie de tarjeta (Barra gris con fecha y ubicación) */
+/* Pie de tarjeta (Barra gris) */
 .blog-card-footer {
-  background-color: #6c757d; /* Tonalidad gris similar a la referencia */
+  background-color: #6c757d;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,6 +144,8 @@
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 500;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .blog-meta-item {
@@ -166,38 +189,37 @@
   color: #ffffff;
 }
 
--------------------BLOG DETALLE-----------------------------------------------
+/* ------------------- BLOG DETALLE ------------------- */
 
 .blog-detalle-wrapper {
-  max-width: 900px; /* Ancho idéntico a la referencia de la segunda foto */
-  margin: -30px auto 60px auto;
+  max-width: 900px;
+  margin: 40px auto 60px auto;
   padding: 0 20px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .blog-detalle-card {
   background-color: #ffffff;
-  padding: 45px 50px; /* Margen interno simétrico en los lados */
+  padding: 45px 50px;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Contenedor e Imagen con Esquinas Redondeadas Sin Cortar */
 .blog-detalle-img-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: #ffffff; /* Fondo por si la imagen es vertical u horizontal */
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 30px;
+  max-width: 650px;
+  margin: 0 auto 25px auto;
+  display: block;
 }
 
 .blog-detalle-main-img {
   width: 100%;
-  max-height: 800px;
-  object-fit: contain; /* Evita que la foto se deforme o se corte mal */
+  height: auto;
+  border-radius: 20px;
   display: block;
+  object-fit: contain;
 }
 
 .blog-detalle-title {
@@ -207,6 +229,7 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 12px;
+  line-height: 1.35;
 }
 
 .blog-detalle-meta {
@@ -215,32 +238,27 @@
   gap: 25px;
   color: #718096;
   font-size: 0.8rem;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .blog-detalle-lead {
   color: #4a5568;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   text-align: left;
-  margin-bottom: 50px;
-  margin-left: 310px;
-  margin-right: 290px;
-  margin-top: 0px;
-  
+  margin: 0 auto 20px auto;
 }
 
 .blog-detalle-section {
   margin-top: 20px;
-  }
+}
 
 .blog-detalle-subtitle {
   color: #0b2545;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   text-align: left;
-  margin-bottom: 10px;
-  margin-left: 315px;/*AQUI PARA AJUSTAR*/
+  margin: 25px 0 10px 0;
   text-transform: uppercase;
 }
 
@@ -249,10 +267,7 @@
   font-size: 0.95rem;
   line-height: 1.7;
   text-align: left;
-  margin-bottom: 50px;
-  margin-left: 315px;
-  margin-right: 290px;
-  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 /* Compartir en redes sociales */
@@ -298,9 +313,3 @@
   margin: 60px auto 40px auto;
   padding: 0 20px;
 }
-
-.blog-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-

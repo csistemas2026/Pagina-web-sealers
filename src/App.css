@@ -123,19 +123,16 @@ a {
 
 /* 1. Fondo exterior gris oscuro/azul para los laterales infinitos */
 .app-layout-wrapper {
-  background-color: #0b1d33; /* El color oscuro que se ve de fondo en las flechas laterales */
+  background-color: #ffffff; /* Ahora el fondo general es blanco */
   min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* Centra el contenedor encajonado en pantallas enormes */
+  width: 100%; /* Centra el contenedor encajonado en pantallas enormes */
 }
 
 /* 2. El contenedor contenedor de la web (Las líneas negras de tu guía) */
 .app-boxed-container {
   width: 100%;
-  max-width: 1200px; /* Al igualar el ancho de tu grilla madre, todo encaja milimétricamente */
-  background-color: #ffffff; /* Fondo blanco interno */
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Sombra suave para darle separación y elegancia */
+  max-width: 100%; /* Se cambió de 1200px a 100% para evitar el encajonado */
+  background-color: #ffffff;
+  box-shadow: none; /* Quita la sombra lateral del encajonado */
   box-sizing: border-box;
-  overflow: hidden; /* Evita que sliders o fondos se salgan del recuadro */
 }

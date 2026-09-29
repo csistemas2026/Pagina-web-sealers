@@ -1,0 +1,53 @@
+.page-banner-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-image: url('../assets/images/fondopro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center; /* CENTRA el texto horizontalmente */
+  align-items: flex-end;   /* BAJA el texto hacia la parte inferior */
+  padding-bottom: 30px;    /* Controla la posición en escritorio */
+}
+
+/* Capa azul con opacidad para oscurecer el fondo */
+.page-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 94, 179, 0.07);
+  z-index: 1;
+}
+
+/* Texto del banner */
+.page-banner-title {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-align: center;
+  transform: translateY(-30px);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- RESPONSIVO PARA TABLETS Y CELULARES --- */
+@media (max-width: 768px) {
+  .page-banner-container {
+    height: 110px;          /* Reduce la altura para que no se vea grueso en móvil */
+    align-items: center;    /* Centra verticalmente el contenido en el banner delgado */
+    padding-bottom: 0;      /* Quita el espacio inferior de escritorio */
+  }
+  
+  .page-banner-title {
+    font-size: 1.4rem;      /* Tamaño de letra proporcional para móviles */
+    transform: translateY(0); /* Alinea el texto perfecto al centro del banner */
+    letter-spacing: 1px;
+  }
+}

@@ -1,7 +1,9 @@
 /* Contenedor principal del Hero con tu imagen section1.png */
 .hero-section {
   width: 100%;
-  min-height: 850px; /* Ajusta la altura para que se vea toda la escena del camión */
+  height: 100vh;         /* Fuerza a ocupar el 100% de la altura del navegador */
+  height: 100dvh;        /* Soporte preciso para navegadores móviles sin barra de dirección */
+  min-height: 500px;     /* Evita que se colapse en pantallas de altura extremadamente pequeña */
   background-image: url('../../assets/images/inicio.png');
   background-size: cover;
   background-position: center;
@@ -12,7 +14,8 @@
   justify-content: center;
   position: relative;
 
-  padding-top: -20px; /* Espacio para que el Header absoluto no tape el texto */
+  padding-top: 0px; 
+  box-sizing: border-box;
 }
 
 /* Contenedor del texto alineado a la izquierda con la misma grilla del Header (1200px) */
@@ -28,11 +31,11 @@
 .hero-title {
   color: #ffffff;
   font-family: sans-serif;
-  font-size: 56px;      /* <--- Aumentado */
+  font-size: 56px;      
   font-weight: 800;
-  line-height: 1.1;     /* Ajustado para el nuevo tamaño */
+  line-height: 1.1;     
   margin-bottom: 15px;  
-  letter-spacing: -1.5px; /* Ajustado para que las letras grandes no se vean separadas */
+  letter-spacing: -1.5px; 
 }
 
 /* LA CLAVE: El fondo rojo ajustado perfectamente a la palabra */
@@ -47,11 +50,11 @@
 .hero-subtitle {
   color: #ffffff;
   font-family: sans-serif;
-  font-size: 18px;      /* <--- Aumentado */
+  font-size: 18px;      
   font-weight: 400;
   letter-spacing: 0.5px;
-  margin-bottom: 30px;  /* Un poco más de aire */
-  max-width: 500px;     /* Ligeramente más ancho para compensar la letra grande */
+  margin-bottom: 30px;  
+  max-width: 500px;     
   line-height: 1.5;
 }
 
@@ -60,8 +63,8 @@
   background-color: #b31d24;
   color: #ffffff;
   border: none;
-  padding: 16px 32px;   /* Aumentamos el padding para un botón más robusto */
-  font-size: 16px;      /* <--- Aumentado */
+  padding: 16px 32px;   
+  font-size: 16px;      
   font-weight: 700;
   cursor: pointer;
   border-radius: 4px;
@@ -77,8 +80,124 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 650px;
-    padding-top: 60px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 550px;
+    padding-top: 40px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .highlight-red {
+    padding: 2px 10px;
+    margin-top: 5px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin: 0 auto 25px auto;
+    max-width: 320px;
+  }
+
+  .hero-button {/* Contenedor principal del Hero con tu imagen section1.png */
+.hero-section {
+  width: 100%;
+  height: 100vh;         /* Fuerza a ocupar el 100% de la altura del navegador */
+  height: 100dvh;        /* Soporte preciso para navegadores móviles sin barra de dirección */
+  min-height: 500px;     /* Evita que se colapse en pantallas de altura extremadamente pequeña */
+  background-image: url('../../assets/images/inicio.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center;
+  position: relative;
+
+  padding-top: 0px; 
+  box-sizing: border-box;
+}
+
+/* Contenedor del texto alineado a la izquierda con la misma grilla del Header (1200px) */
+.hero-content {
+  max-width: 1200px;
+  width: 70%;
+  margin: 0;            /* Quitamos el 'auto' para que no se centre */
+  padding: 0 20px;
+  text-align: left;
+}
+
+/* El título principal corregido */
+.hero-title {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 56px;      
+  font-weight: 800;
+  line-height: 1.1;     
+  margin-bottom: 15px;  
+  letter-spacing: -1.5px; 
+}
+
+/* LA CLAVE: El fondo rojo ajustado perfectamente a la palabra */
+.highlight-red {
+  background-color: #b31d24; /* El rojo corporativo exacto */
+  padding: 2px 15px;         /* Colchón pequeño para que sea un rectángulo elegante */
+  display: inline-block;     /* Evita que la caja roja se expanda a lo ancho */
+  border-radius: 4px;        /* Un leve toque redondeado si lo requiere */
+}
+
+/* Subtítulo más fino y espaciado */
+.hero-subtitle {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 18px;      
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;  
+  max-width: 500px;     
+  line-height: 1.5;
+}
+
+/* Botón Rojo */
+.hero-button {
+  background-color: #b31d24;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;   
+  font-size: 16px;      
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.hero-button:hover {
+  background-color: #b31d24;
+}
+
+/* ==========================================
+   AJUSTE CENTRADO PARA IPHONE 14 PRO Y MÓVILES
+   ========================================== */
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 550px;
+    padding-top: 40px;
   }
 
   .hero-content {
@@ -108,6 +227,14 @@
   }
 
   .hero-button {
+    width: 100%;
+    max-width: 290px;
+    padding: 14px 20px;
+    font-size: 14px;
+    margin: 0 auto;
+    display: block;
+  }
+}
     width: 100%;
     max-width: 290px;
     padding: 14px 20px;

@@ -4,30 +4,32 @@
 
 /* Contenedor principal */
 .site-footer {
-  background-color: rgba(8, 93, 179, 0.6);
+  background-color: #0f3861; /* Azul corporativo sólido */
   color: #ffffff;
   padding: 40px 20px 20px;
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-  overflow-x: hidden; /* Evita desbordamiento horizontal global */
+  overflow-x: hidden;
 }
 
 .footer-container {
-  max-width: 1300px;
+  max-width: 1200px; /* Ancho máximo estándar bien distribuido */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
-  gap: 70px;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr 1.2fr; /* Proporciones corregidas */
+  gap: 40px; /* Separación moderada entre columnas */
   align-items: start;
   width: 100%;
   box-sizing: border-box;
+  text-align: left; /* Alineación normal a la izquierda */
 }
 
 /* Columna de la marca / logo */
 .col-brand {
-  max-width: 300px;
-  flex: 1;
+  width: 100%;
+  max-width: 320px;
+  /* Se eliminó flex: 1 para corregir el conflicto con CSS Grid */
 }
 
 .footer-logo-img {
@@ -39,7 +41,7 @@
 }
 
 .footer-description {
-  font-size: 15px;
+  font-size: 14px;
   margin: 10px 0;
   color: #f1efef;
   line-height: 1.5;
@@ -56,7 +58,7 @@
 
 .info-item {
   margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
 }
 
@@ -140,13 +142,13 @@
 
 /* Libro de reclamaciones */
 .col-reclamaciones {
-  text-align: center;
+  text-align: left;
 }
 
 .reclamaciones-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .book-icon-svg {
@@ -192,13 +194,20 @@
    AJUSTE RESPONSIVO (IPHONE 14 PRO Y MÓVILES ≤ 768px)
    ========================================================================== */
 
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para tablets */
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .site-footer {
     padding: 30px 16px 20px 16px;
   }
 
   .footer-container {
-    grid-template-columns: 1fr; /* Una sola columna alineada */
+    grid-template-columns: 1fr; /* Una sola columna alineada en móviles */
     gap: 30px;
     text-align: center;
     align-items: center;
@@ -271,6 +280,10 @@
   }
 
   /* Libro de Reclamaciones */
+  .col-reclamaciones {
+    text-align: center;
+  }
+
   .reclamaciones-content {
     align-items: center;
   }

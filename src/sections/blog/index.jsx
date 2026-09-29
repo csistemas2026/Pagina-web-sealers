@@ -1,75 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import fondopro from '../../assets/images/fondopro.jpg';
-import blog1 from '../../assets/images/blog1.png'; // O la imagen que uses para las noticias del foro
-import '../../styles/blog/blog.css'; // Asegúrate de ajustar la ruta si tu archivo css está en otra carpeta
+import Banner from '../../components/Banner'; // Importamos el componente Banner
+import '../../styles/blog/blog.css';
+import blogPosts from '../../data/blogData.js';
 
 export const Blog = () => {
-  // Lista de publicaciones de ejemplo para renderizar la cuadrícula
-  const blogPosts = [
-    {
-      id: 1,
-      category: 'Noticias',
-      title: 'Seguridad en la Cadena Logística Exterior',
-      date: '22 de junio de 2026',
-      location: 'MINCETUR - San Isidro',
-      image: blog1,
-    },
-    {
-      id: 2,
-      category: 'Noticias',
-      title: 'Seguridad en la Cadena Logística Exterior',
-      date: '22 de junio de 2026',
-      location: 'MINCETUR - San Isidro',
-      image: blog1,
-    },
-    {
-      id: 3,
-      category: 'Noticias',
-      title: 'Seguridad en la Cadena Logística Exterior',
-      date: '22 de junio de 2026',
-      location: 'MINCETUR - San Isidro',
-      image: blog1,
-    },
-    {
-      id: 4,
-      category: 'Noticias',
-      title: 'Seguridad en la Cadena Logística Exterior',
-      date: '22 de junio de 2026',
-      location: 'MINCETUR - San Isidro',
-      image: blog1,
-    },
-    {
-      id: 5,
-      category: 'Noticias',
-      title: 'Seguridad en la Cadena Logística Exterior',
-      date: '22 de junio de 2026',
-      location: 'MINCETUR - San Isidro',
-      image: blog1,
-    },
-    {
-      id: 6,
-      category: 'Noticias',
-      title: 'Seguridad en la Cadena Logística Exterior',
-      date: '22 de junio de 2026',
-      location: 'MINCETUR - San Isidro',
-      image: blog1,
-    },
-  ];
+  const [paginaActual, setPaginaActual] = useState(1);
+  const postsPorPagina = 9;
+
+  // Uso directo del arreglo importado blogArticles
+  const listaPosts = blogPosts || [];
+  const totalPaginas = Math.ceil(listaPosts.length / postsPorPagina);
+  const indiceUltimoPost = paginaActual * postsPorPagina;
+  const indicePrimerPost = indiceUltimoPost - postsPorPagina;
+  const postsPaginados = listaPosts.slice(indicePrimerPost, indiceUltimoPost);
 
   return (
     <div className="blog-page-container">
-      {/* Banner Superior Opcional (si mantienes la línea estética de tus otras páginas) */}
-      <section className="section-banner">
-        <div className="contacto-overlay">
-          <h1 className="contacto-title">Blog y Noticias</h1>
-        </div>
-      </section>
+      {/* Banner Superior con el nuevo componente Banner */}
+      <Banner title="Blog y Noticias" />
 
       {/* Contenido Principal de Blog */}
       <div className="blog-content-wrapper">
         <div className="blog-grid">
-          {blogPosts.map((post) => (
+          {postsPaginados.map((post) => (
             <Link to={`/blog/${post.id}`} className="blog-card-link" key={post.id}>
               <div className="blog-card">
                 {/* Imagen de la tarjeta */}
@@ -97,13 +51,23 @@ export const Blog = () => {
           ))}
         </div>
 
-        {/* Paginación Inferior */}
-        <div className="blog-pagination">
-          <button className="page-btn active">1</button>
-          <button className="page-btn">2</button>
-          <button className="page-btn">3</button>
-          <button className="page-btn">4</button>
-        </div>
+        {/* Paginación Dinámica de 9 en 9 */}
+        {totalPaginas > 1 && (
+          <div className="blog-pagination">
+            {Array.from({ length: totalPaginas }, (_, index) => {
+              const numeroPagina = index + 1;
+              return (
+                <button
+                  key={numeroPagina}
+                  className={`page-btn ${paginaActual === numeroPagina ? 'active' : ''}`}
+                  onClick={() => setPaginaActual(numeroPagina)}
+                >
+                  {numeroPagina}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

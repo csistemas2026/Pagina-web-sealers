@@ -1,67 +1,123 @@
+/* src/styles/producto/prodetalles.css */
+
 /* --- CONTENEDOR GENERAL --- */
 .detalle-page-container {
   width: 100%;
-  background-color: #f8fafc;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
   padding-bottom: 80px;
 }
 
 /* --- BANNER HERO SUPERIOR --- */
-.banner-hero {
-  background-image: url('../../assets/images/banner-bg.jpg');
-  background-size: cover;
-  background-position: center;
+.contacto-hero {
+  position: relative;
   width: 100%;
-  padding: 60px 0;
+  height: 220px;
+  background: #031b2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-overlay {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 0 20px;
 }
 
-.banner-overlay {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
-.banner-title {
+.contacto-title {
   color: #ffffff;
-  font-size: 2.8rem; /* Título superior más grande */
-  font-weight: bold;
-  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* --- CONTENEDOR DE LAS 2 COLUMNAS --- */
+/* --- BOTÓN DE RETROCESO --- */
+.detalle-back-container {
+  max-width: 1450px;
+  margin: 25px auto -15px auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #0b2545;
+  border: 1.5px solid #e2e8f0;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.btn-back:hover {
+  background-color: #0b2545;
+  color: #ffffff;
+  border-color: #0b2545;
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-back:hover .btn-back-icon {
+  transform: translateX(-4px);
+}
+
+/* --- CONTENEDOR DE 2 COLUMNAS --- */
 .detalle-content-wrapper {
-  max-width: 1450px; /* Contenedor más amplio para alojar elementos grandes */
+  max-width: 1450px;
   margin: 50px auto;
   padding: 0 40px;
   display: flex;
   gap: 60px;
-  align-items: flex-start;
+  align-items: center; 
   justify-content: center;
 }
 
-/* --- COLUMNA IZQUIERDA: IMAGEN MÁS GRANDE --- */
+/* --- COLUMNA IZQUIERDA: IMAGEN BLANCA --- */
 .detalle-image-section {
-  flex: 0 0 650px; /* Imagen grande y protagonista */
+  flex: 0 0 650px;
   max-width: 650px;
+  width: 100%;
+  position: sticky;
+  top: 40px;
 }
 
 .detalle-main-img-box {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 30px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Importante para que el zoom no desborde la caja */
 }
 
 .detalle-main-img-box img {
   width: 100%;
-  max-height: 600px; /* Imagen escalada a mayor altura */
+  max-height: 500px;
   object-fit: contain;
+  animation: flotarImagenPrincipal 2s ease-in-out infinite;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.detalle-main-img-box:hover img {
+  transform: scale(1.08);
+  animation-play-state: paused;
 }
 
 .detalle-dots {
@@ -77,45 +133,45 @@
   background-color: #cbd5e1;
   border-radius: 50%;
   display: inline-block;
+  cursor: pointer;
 }
 
 .detalle-dots .dot.active {
   background-color: #0b2545;
 }
 
-/* --- COLUMNA DERECHA: INFORMACIÓN AMPLIADA --- */
+/* --- COLUMNA DERECHA: INFORMACIÓN --- */
 .detalle-info-section {
   flex: 1.3;
   text-align: left;
+  width: 100%;
 }
 
 .detalle-category {
   color: #b91c1c;
   font-weight: bold;
-  font-size: 1.2rem; /* Categoría más grande */
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-align: left;
 }
 
 .detalle-title {
   color: #0b2545;
-  font-size: 3rem; /* Nombre del producto mucho más grande */
+  font-size: 1.62rem;
   font-weight: bold;
   margin-top: 8px;
   margin-bottom: 15px;
-  text-align: left;
 }
 
 .detalle-desc {
   color: #475569;
-  font-size: 1.25rem; /* Descripción más legible y grande */
+  font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 30px;
-  text-align: left;
+  white-space: pre-line;
 }
 
-/* --- ESPECIFICACIONES (Filas más grandes) --- */
+/* --- ESPECIFICACIONES ORDENADAS --- */
 .specs-container {
   display: flex;
   flex-direction: column;
@@ -134,9 +190,11 @@
   padding: 14px 18px;
   width: 180px;
   font-weight: bold;
-  font-size: 1.05rem; /* Etiquetas de especificaciones más grandes */
+  font-size: 0.9rem;
+  line-height: 1.4;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .spec-label.dark {
@@ -144,19 +202,16 @@
   color: #ffffff;
 }
 
-.spec-label.light {
-  background-color: #f1f5f9;
-  color: #0b2545;
-}
-
 .spec-value {
   padding: 14px 18px;
   color: #334155;
-  font-size: 1.05rem; /* Valores de especificaciones más grandes */
+  font-size: 0.9rem;
+  line-height: 1.5;
   background-color: #ffffff;
   flex: 1;
   display: flex;
   align-items: center;
+  white-space: pre-line;
 }
 
 /* --- COMPARTIR --- */
@@ -165,130 +220,169 @@
   align-items: center;
   gap: 18px;
   color: #64748b;
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   margin-top: 20px;
 }
 
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
-.social-icons span {
+.social-icons button {
+  background: none;
+  border: none;
   cursor: pointer;
   font-weight: bold;
   color: #475569;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   transition: color 0.2s;
 }
 
-.social-icons span:hover {
+.social-icons button:hover {
   color: #0b2545;
 }
 
-/* --- BARRA INFERIOR DE ACCIONES AMPLIADA --- */
-.detalle-footer-bar {
+/* ==========================================================================
+   BARRA INFERIOR DE ACCIONES (3 BLOQUES INDEPENDIENTES)
+   ========================================================================== */
+
+.detalle-footer-bar-container {
   max-width: 1450px;
   margin: 60px auto 0 auto;
+  padding: 0 40px;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
-  background-color: #556070;
-  padding: 25px 45px; /* Más padding para hacer la barra más alta y robusta */
-  border-radius: 10px;
+  justify-content: space-between;
   box-sizing: border-box;
 }
 
-.benefits-group {
+/* BLOQUE 1: TARJETA DE BENEFICIOS GRIS */
+.benefits-card-block {
+  flex: 1;
+  background-color: #7b7f83;
+  border-radius: 8px;
+  padding: 18px 30px;
   display: flex;
-  gap: 30px;
+  align-items: center;
+  justify-content: space-around;
   color: #ffffff;
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.05rem; /* Beneficios más grandes */
+  gap: 12px;
 }
 
-.actions-group {
+.benefit-icon {
+  width: 36px;
+  height: 36px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.benefit-text {
   display: flex;
-  gap: 18px;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-.btn-cotizar {
-  background-color: #16a34a;
+/* BLOQUE 2: BOTÓN VERDE DE COTIZACIÓN */
+.btn-cotizar-card {
+  background-color: #00c853;
   color: #ffffff;
   border: none;
-  padding: 14px 24px; /* Botones más grandes y cómodos */
   border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.05rem;
+  padding: 14px 28px;
+  font-size: 1.02rem;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: background-color 0.2s;
+  gap: 12px;
+  transition: background-color 0.2s, transform 0.2s;
+  height: 72px;
 }
 
-.btn-cotizar:hover {
-  background-color: #15803d;
+.btn-cotizar-card:hover {
+  background-color: #00a843;
+  transform: translateY(-2px);
 }
 
-.btn-ficha {
+.btn-icon-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-icon-circle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* BLOQUE 3: BOTÓN ROJO DE FICHA TÉCNICA */
+.btn-ficha-card {
   background-color: #b91c1c;
   color: #ffffff;
   border: none;
-  padding: 14px 24px;
   border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.05rem;
+  padding: 14px 28px;
+  font-size: 1.02rem;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: background-color 0.2s;
+  gap: 12px;
+  transition: background-color 0.2s, transform 0.2s;
+  height: 72px;
 }
 
-.btn-ficha:hover {
+.btn-ficha-card:hover {
   background-color: #991b1b;
+  transform: translateY(-2px);
 }
 
-/* --- ESTILO DE RESPALDO (Error) --- */
-.detalle-no-encontrado {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.detalle-no-encontrado button {
-  background-color: #0b2545;
-  color: white;
-  border: none;
-  padding: 12px 24px;
+.btn-icon-rounded {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
   border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
+.btn-icon-rounded svg {
+  width: 20px;
+  height: 20px;
+}
 
-
-/* --- SECCIÓN SELECCIÓN RECOMENDADA --- */
+/* --- SECCIÓN RECOMENDADOS --- */
 .recomendados-section {
-  padding: 40px 20px;
-  background-color: #fff;
+  padding: 60px 20px 40px 20px;
+  background-color: #ffffff;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.recomendados-container{
-  max-width: 1200px;
+.recomendados-container {
+  max-width: 1450px;
   margin: 0 auto;
 }
 
 .recomendados-titulo {
   color: #0b2545;
-  font-size: 2.2rem;
+  font-size: 1.92rem;
   font-weight: bold;
   position: relative;
   margin-bottom: 35px;
@@ -310,6 +404,9 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .recomendado-card {
@@ -317,11 +414,14 @@
   border: 1.5px solid #cbd5e1;
   border-radius: 10px;
   padding: 15px;
-  flex: 1;
+  flex: 0 1 220px;
+  max-width: 240px;
+  min-width: 180px;
   text-align: center;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .recomendado-card:hover {
@@ -340,26 +440,115 @@
   background-color: #f8fafc;
   border-radius: 6px;
   overflow: hidden;
+  position: relative;
 }
+
+/* --- ANIMACIÓN DE FLOTAR PARA RECOMENDADOS --- */
 
 .recomendado-img-box img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  animation: flotarImagen 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Pausa el flote y hace zoom elegante al pasar el mouse por la tarjeta */
+.recomendado-card:hover .recomendado-img-box img {
+  transform: scale(1.08);
+  animation-play-state: paused;
 }
 
 .recomendado-sub {
   display: block;
   color: #64748b;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .recomendado-nombre {
   color: #0b2545;
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   font-weight: bold;
   margin: 0;
 }
 
+/* ==========================================================================
+   RESPONSIVO (TABLETS Y MÓVILES)
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .detalle-footer-bar-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .benefits-card-block {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .btn-cotizar-card, 
+  .btn-ficha-card {
+    width: 100%;
+    justify-content: center;
+    height: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detalle-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .detalle-image-section {
+    flex: 1 1 100%;
+    max-width: 100%;
+    position: static; 
+  }
+
+  .spec-row {
+    flex-direction: column;
+  }
+
+  .spec-label {
+    width: 100%;
+    border-bottom: 1px solid #94a3b8;
+  }
+
+  .spec-value {
+    width: 100%;
+  }
+
+  .recomendados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recomendados-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- ANIMACIÓN DE FLOTAR PARA LA IMAGEN PRINCIPAL --- */
+@keyframes flotarImagenPrincipal {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

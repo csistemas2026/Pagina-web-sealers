@@ -1,120 +1,133 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Banner from '../../components/Banner';
 import '../../styles/producto/main.css';
-import '../../styles/contacto/Section1.css';
-
-// Imágenes
-import fondopro from '../../assets/images/fondopro.jpg'; 
-import altaseguridad from '../../assets/images/altaseguridad.jpg';
-import zeusblanco from '../../assets/images/zeusblanco.jpg';
-import zeusamarillo from '../../assets/images/zeusamarillo.jpg';
-import securelockverde from '../../assets/images/securelockverde.jpg';
-import hercules from '../../assets/images/hercules.jpg';
-
-//PRECINTOS SEGURIDAD IMAGENES
-
-import securelock23 from '../../assets/images/securelock23.jpg';
-import secureperno from '../../assets/images/securelockperno.jpg';
-import securelockABS from '../../assets/images/securelockABS.jpg';
-
-
-//PRECINTO 
+import { baseDeDatosCategorias, solucionesSecundarias } from '../../data/productosData';
 
 function Main() {
   const navigate = useNavigate();
-  // 1. Capturamos el slug/id de la URL (/productos/:id)
   const { id } = useParams();
 
-  // 2. Base de datos/Mapeo dinamico segun el id de la URL
-  const baseDeDatosCategorias = {
-    'alta-seguridad': {
-      titulo: 'Precintos de Alta Seguridad',
-      productos: [
-        { id: 1, title: 'ZEUS', category: 'Precinto de Alta Seguridad', img: zeusamarillo, path: '/subproductos/prodetalles/1'},  
-        { id: 2, title: 'ZEUS ENCAPSULADO', category: 'Precinto de Alta Seguridad', img: zeusblanco, path: '/subproductos/prodetalles/2' },
-        { id: 3, title: 'HÉRCULES', category: 'Precinto de Alta Seguridad', img: hercules, path: '/subproductos/prodetalles/3' },
-        { id: 4, title: 'SECURE LOCK lV', category: 'Precinto de Alta Seguridad', img: securelockverde, path: '/subproductos/prodetalles/4' },
-      ]
-    },
-    'seguridad': {
-      titulo: 'Precintos de Seguridad',
-      productos: [
-        { id: 5, title: 'SECURE LOCK ll-lll', category: 'Precinto de Seguridad', img: securelock23, path: '/subproductos/prodetalles/5' },
-        { id: 6, title: 'SECURE LOCK C-PERNO', category: 'Precinto de Seguridad', img: secureperno, path: '/subproductos/prodetalles/6' },
-        { id: 7, title: 'SECURE LOCK lll ABS', category: 'Precinto de Seguridad', img: securelockABS, path: '/subproductos/prodetalles/7' },
-      ]
-    },
-    'indicativos': {
-      titulo: 'Precintos Indicativos',
-      productos: [
-        { id: 8, title: 'INDICATIVO PLÁSTICO', category: 'Precinto Indicativo', img: altaseguridad, path: '/subproductos/prodetalles/8' },
-      ]
-    },
-    'especializados': {
-      titulo: 'Kits Especializados',
-      productos: [
-        { id: 9, title: 'KIT ESPECIALIZADO 1', category: 'Kits', img: altaseguridad, path: '/subproductos/prodetalles/9' },
-      ]
-    },
-    'big-bag': {
-      titulo: 'Bolsa Big Bag',
-      productos: [
-        { id: 10, title: 'BOLSA BIG BAG HEAVY', category: 'Bolsa', img: altaseguridad, path: '/subproductos/prodetalles/10' },
-      ]
+  const [paginaActual, setPaginaActual] = useState(1);
+  const productosPorPagina = 9;
+
+  // Clave de la categoría activa recibida desde la URL (ej: 'candados-electronicos')
+  const categoriaKey = id || 'alta-seguridad';
+  
+  // Obtener la categoría actual desde la base de datos
+  const categoriaActual = baseDeDatosCategorias[categoriaKey] || {
+    titulo: 'Catálogo de Productos',
+    productos: []
+  };
+  
+  const listaProductos = categoriaActual.productos || [];
+
+  // Al cambiar el parámetro 'id' de la URL, reiniciamos la página y hacemos scroll arriba
+  useEffect(() => {
+    setPaginaActual(1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [id]);
+
+  // Paginación
+  const totalPaginas = Math.ceil(listaProductos.length / productosPorPagina);
+  const indiceUltimoProducto = paginaActual * productosPorPagina;
+  const indicePrimerProducto = indiceUltimoProducto - productosPorPagina;
+  const productosPaginados = listaProductos.slice(indicePrimerProducto, indiceUltimoProducto);
+
+  // Ir al detalle individual de un producto (GRAN COLOSO, ESCORPIÓN, etc.)
+  const handleCardClick = (item) => {
+    const targetPath = item.path || `/subproductos/prodetalles/${item.id}`;
+    navigate(targetPath, { state: { producto: item } });
+  };
+
+  // Cambiar de categoría desde la sección "Encuentra más Soluciones para ti"
+  const handleSolutionClick = (item) => {
+    const targetCategory = item.categoryKey || item.id;
+    if (targetCategory) {
+      navigate(`/productos/${targetCategory}`);
     }
   };
 
-  // 3. Obtenemos la información según la URL (si no coincide con ninguna, usa alta-seguridad por defecto)
-  const categoriaActual = baseDeDatosCategorias[id] || baseDeDatosCategorias['alta-seguridad'];
-
-  // 4. Soluciones secundarias
-  const solucionesSecundarias = [
-    { id: 1, title: 'BIG BAG', category: 'Bolsos', img: altaseguridad, path: '/productos/big-bag' },
-    { id: 2, title: 'ESPECIALIZADOS', category: 'Kits', img: altaseguridad, path: '/productos/especializados' },
-    { id: 3, title: 'ALTA SEGURIDAD', category: 'Precintos de', img: altaseguridad, path: '/productos/alta-seguridad' },
-    { id: 4, title: 'SEGURIDAD', category: 'Precintos de', img: altaseguridad, path: '/productos/seguridad' },
-    { id: 5, title: 'INDICATIVOS', category: 'Precintos de', img: altaseguridad, path: '/productos/indicativos' },
-  ];
+  // Excluimos la categoría actual para que no aparezca en las opciones de abajo
+  const solucionesFiltradas = (solucionesSecundarias || []).filter((item) => {
+    return item.id !== categoriaKey && item.categoryKey !== categoriaKey;
+  });
 
   return (
     <div className="main-page-container">
       {/* Banner Superior Dinámico */}
-      <section className="contacto-hero">
-        <div className="contacto-overlay">
-          <h1 className="contacto-title">{categoriaActual.titulo}</h1>
-        </div>
-      </section>
+      <Banner title={categoriaActual.titulo || "Catálogo de Productos"} />
+
+      {/* Botón de retroceso */}
+      <div className="detalle-back-container">
+        <button className="btn-back" onClick={() => navigate(-1)}>
+          <svg 
+            className="btn-back-icon" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Volver atrás</span>
+        </button>
+      </div>
 
       {/* SECCIÓN 1: Cuadrícula Principal Dinámica */}
       <section className="main-productos-section">
-        <div className="main-productos-grid">
-          {categoriaActual.productos.map((item) => (
-            <div 
-              className="main-card" 
-              key={item.id}
-              onClick={() => navigate(item.path, { state: { producto: item } })}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="main-card-img-box">
-                <img src={item.img} alt={item.title} />
-                
-                <div className="main-card-overlay">
-                  <div className="eye-icon">👁</div>
-                  <span className="main-card-cat">{item.category}</span>
-                  <h3 className="main-card-title">{item.title}</h3>
+        {productosPaginados.length > 0 ? (
+          <div className="main-productos-grid">
+            {productosPaginados.map((item) => (
+              <div 
+                className="main-card" 
+                key={item.id}
+                onClick={() => handleCardClick(item)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="main-card-img-box">
+                  <img src={item.img} alt={item.title} />
+                  
+                  <div className="main-card-overlay">
+                    <div className="eye-icon">👁</div>
+                    <span className="main-card-cat">{item.category}</span>
+                    <h3 className="main-card-title">{item.title}</h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ textAlign: 'center', padding: '40px 20px', color: '#64748b' }}>
+            <p>No se encontraron productos disponibles en esta categoría.</p>
+          </div>
+        )}
 
-        {/* Paginación */}
-        <div className="main-pagination">
-          <span className="page-dot active">1</span>
-          <span className="page-dot">2</span>
-          <span className="page-dot">3</span>
-          <span className="page-dot">4</span>
-        </div>
+        {/* Paginación Dinámica */}
+{totalPaginas > 1 && (
+  <div className="main-pagination">
+    {Array.from({ length: totalPaginas }, (_, index) => {
+      const numeroPagina = index + 1;
+      return (
+        <span
+          key={numeroPagina}
+          className={`page-dot ${paginaActual === numeroPagina ? 'active' : ''}`}
+          onClick={() => {
+            setPaginaActual(numeroPagina);
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // <-- Agrega esto
+          }}
+          style={{ cursor: 'pointer' }}
+        >
+          {numeroPagina}
+        </span>
+      );
+    })}
+  </div>
+)}
       </section>
 
       {/* SECCIÓN 2: "Encuentra más Soluciones para ti" */}
@@ -125,11 +138,11 @@ function Main() {
         </div>
 
         <div className="solutions-grid">
-          {solucionesSecundarias.map((item) => (
+          {solucionesFiltradas.map((item) => (
             <div 
               className="main-card" 
               key={item.id}
-              onClick={() => navigate(item.path)}
+              onClick={() => handleSolutionClick(item)}
               style={{ cursor: 'pointer' }}
             >
               <div className="main-card-img-box">

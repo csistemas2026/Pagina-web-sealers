@@ -1,12 +1,61 @@
 /* src/styles/producto/main.css */
 
 .main-page-container {
-  background-color: #f4f6f9;
+  background-color: #ffffff;
   min-height: 100vh;
   font-family: Arial, sans-serif;
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+/*----------- BOTÓN DE RETROCESO (NUEVO) -----------*/
+.detalle-back-container {
+  max-width: 1400px;
+  margin: 25px auto -15px auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #0b2545;
+  border: 1.5px solid #e2e8f0;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.btn-back:hover {
+  background-color: #0b2545;
+  color: #ffffff;
+  border-color: #0b2545;
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-back:hover .btn-back-icon {
+  transform: translateX(-4px);
+}
+
+.btn-back:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(11, 37, 69, 0.15);
 }
 
 /*----------- SECCIÓN 1: PRODUCTOS PRINCIPALES -----------*/
@@ -176,6 +225,17 @@
    TABLETS Y PANTALLAS MEDIANAS (≤ 1024px)
    ========================================== */
 @media (max-width: 1024px) {
+  .detalle-back-container {
+    padding: 0 20px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+  }
+
+  .btn-back {
+    padding: 8px 16px;
+    font-size: 0.88rem;
+  }
+
   .main-productos-section {
     padding: 40px 20px;
   }
@@ -240,6 +300,9 @@
   }
 }
 
+.detalle-texto {
+  white-space: pre-line;
+}
 /* ==========================================
    MÓVILES PEQUEÑOS (≤ 480px)
    ========================================== */
@@ -261,3 +324,4 @@
     font-size: 1.3rem;
   }
 }
+

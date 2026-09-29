@@ -1,6 +1,3 @@
-import React from 'react';
-import Header from '../components/Header'; // Importa el que ya existe
-import Footer from '../components/Footer'; // Importa el que ya existe
 import WhatsAppButton from '../components/WhatsAppButton';
 import Section1 from '../sections/conocenos/Section1.jsx';
 import Section2 from '../sections/conocenos/Section2.jsx';

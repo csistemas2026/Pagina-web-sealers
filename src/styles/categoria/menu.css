@@ -60,13 +60,13 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .menu-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px); /* Eleva un poco más la tarjeta para darle protagonismo */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más profunda y elegante */
 }
 
 .menu-card-img-box {
@@ -74,12 +74,16 @@
     width: 100%;
     height: 320px;
     background-color: #f8fafc;
+    overflow: hidden; /* IMPORTANTE: Esto asegura que el zoom de la imagen no se salga de los bordes redondeados */
 }
 
 .menu-card-img-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Agregamos la transición para la imagen */
+    transition: transform 0.5s ease;
+    transform: scale(1.08); /* Hace un acercamiento del 8% de manera fluida */
 }
 
 /* Overlay Desktop */
@@ -222,3 +226,21 @@
         height: 260px;
     }
 }
+
+@keyframes respiracion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04); /* Se acerca un 4% */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Aplica el pulso automático a las imágenes */
+.menu-card img {
+  animation: respiracion 3s ease-in-out infinite;
+}
+
